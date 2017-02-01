@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+  <style>
+  .class1{
+	  position: relative;
+	  background: #4ECC24;
+	  width: 500px;
+	  height: 500px;
+  }
+
+  .class2{
+	  position: absolute;
+	  background: #1010CC;
+	  width: 250px;
+	  height: 250px;
+	  top: 125px;
+	  left: 125px;
+
+  }
+
+  </style>
+</head>
+
+<body>
+	<div class="class1">
+    <span>aaa</span>
+
+	<div class="class2">
+        <span>bbb
+        <a href="#" onclick="func(); return false;">link</a>
+		ddd
+        </span>
+
+
+	</div>
+	</div>
+
+
+	<div class="class1">
+    <span>aaa</span>
+
+	<div class="class2">
+        <span>bbb
+        <a href="#" onclick="func(); return false;">link</a>
+		ddd
+        </span>
+
+
+	</div>
+	</div>
+
+
+	<div class="class1">
+    <span>aaa</span>
+
+	<div class="class2">
+		<a href="#" onclick="func(); return false;">link</a>
+        <span>bbb
+        <a href="#" onclick="func(); return false;">link</a>
+		ddd
+        </span>
+
+
+	</div>
+	</div>
+
+
+	<script>
+
+    function func(){
+    	var rcl2 = document.body.getElementsByClassName("class2");
+
+
+		for(var i=0; i<rcl2.length; i++){
+
+        	//var rtag = rcl2[i].getElementsByTagName("*");
+
+
+			for(var j=0; j<rcl2[i].childNodes.length; j++){
+				if(rcl2[i].childNodes[j].nodeName == 'SPAN'){
+                   rcl2[i].childNodes[j].style.backgroundColor = 'red' ;
+				}
+
+                if(rcl2[i].childNodes[j].nodeName == 'A'){
+                   rcl2[i].childNodes[j].style.backgroundColor = 'green' ;
+				}
+			}
+
+
+		}
+
+
+
+    }
+
+	</script>
+</body>
+
+</html>

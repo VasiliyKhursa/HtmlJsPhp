@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Lesson18</title>
+
+    <script>
+    document.write(navigator.appName + '<br>');
+	document.write(navigator.appVersion + "<br>");
+    document.write(navigator.userAgent + "<br>");
+
+	var brow = navigator.userAgent;
+/*
+if (brow.indexOf('Chrome') != -1 && brow.indexOf('OPR') == -1) {
+       video0.innerHTML = '<video src="mult.mp4" style="width: 300px; height: 200px"></video>';
+	}
+*/
+	if (brow.indexOf('Trident') != -1 || brow.indexOf('MSIE') != -1) {
+    	console.log('IE');
+		document.write('<link rel="stylesheet" href="style_ie.css" type="text/css">');
+	}
+	else {
+		console.log('not IE');
+        document.write('<link rel="stylesheet" href="style.css" type="text/css">');
+	}
+
+	</script>
+
+</head>
+
+<body>
+	<div id="video0"></div>
+
+     <a href="#">
+     	<img src="knop1.png">
+		<img src="knop1.png">
+		<img src="knop1.png">
+	 </a>
+
+	<script>
+/*
+    var brow = navigator.userAgent;
+	if (brow.indexOf('Chrome') != -1 && brow.indexOf('OPR') == -1) {
+       video0.innerHTML = '<video src="mult.mp4" style="width: 300px; height: 200px"></video>';
+	}
+*/
+	</script>
+</body>
+
+</html>

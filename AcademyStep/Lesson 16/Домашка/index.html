@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Home16</title>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript">
+    var val;
+	</script>
+</head>
+
+<body>
+	<form name="forma">
+		<input type="text" name="text1" value="первую"/>
+    	<input type="button" name="button" value="Поиск" onclick="val = text1.value; go(text1.value);linkOn();"/>
+	</form>
+    <div id="tex">Это, в первую очередь, объясняется принципами их работы. Здесь можно упомянуть и крос- сплатформенность, и преимущества интернета, как средства доступа к веб приложению из любой точки мира, и небольшие затраты на разворачивание инфраструктуры, и мириады интернет пользователей, готовых потреблять услуги веб-приложений и обогащать их создателей.
+	</div>
+	<a id="link" href="#" style="visibility: hidden" onclick="clickLink();">Ссылка</a>
+
+	<script>
+	var content = tex.innerHTML;										// сохраняем контент в глобальную переменную когда страница загрузилась - добавить потом условие
+
+	function linkOn() {
+        document.getElementById('link').style.visibility = "visible";	// показываем ссылку
+	}
+
+	function clickLink() {
+		console.log('link' + val);
+        window.location.href = "page.html?poisk=" + val;				// передаем параметр и открываем новую страницу
+	}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+#red, #green, #blue{
+ width:100px;
+ height:100px;
+ margin:10px;
+}
+#red{
+ background:red;
+}
+#green{
+ background:green;
+}
+#blue{
+ background:blue;
+}

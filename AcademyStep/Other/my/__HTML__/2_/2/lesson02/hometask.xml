@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<?xml:stylesheet type="text/xsl" href="common/layout.xsl" ?>
+
+<lesson title="Урок №1: Введение в языки разметки" next="index.xml" prev="runtest.xml" summ="0">
+<h2>Домашнее задание</h2>
+<p>В качестве домашнего задания предлагаю разметить фрагмент текста, взятый из спецификации XHTML 1.1. Результат должен иметь следующий вид:
+</p>											
+<picture src="home/homework.gif" number="2.6.1" title="Домашнее задание" />
+
+<p>Исходный текст, который необходимо разметить, располагается в папке <a href="./home/" target="_blank">Home</a>, файл "homework.txt".
+</p>
+</lesson>

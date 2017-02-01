@@ -1,0 +1,64 @@
+select name, tel, adr from user, pokup where user.id_user=pokup.id_user and id_tovar = 3
+select name, tel, adr from user where user.id_user = (select id_user from pokup where id_tovar = 3)			// подзапрос
+select name, tel, adr from user where user.id_user in (select id_user from pokup where id_tovar = 2)			// in - если надо вернуть больше чем одну запись
+select name, tel, adr from user where user.id_user > any (select id_user from pokup where id_tovar = 2)
+
+использование min для правильного поиска
+select name, tel, adr from user where name in (select min(name) from user)
+select name, tel, adr from user where name in (select min(name) from user group by adr)
+SELECT user.name, user.tel, user.adr, tovar.tov, pokup.dat FROM (user JOIN pokup ON user.id_user=pokup.id_user) JOIN tovar ON pokup.id_tovar=tovar.id_tovar
+SELECT user.name, user.tel, user.adr FROM user JOIN pokup ON user.id_user=pokup.id_user where id_tovar in (select max(id_tovar) from tovar)			// поиск максимального айдишника товара, 
+SELECT user.name, user.tel, user.adr FROM user where id_user in (select max(id_user) from pokup where id_tovar in (select id_tovar from tovar))
+
+SELECT user.name, user.tel, user.adr FROM user 
+where id_user in (select id_user from pokup where id_tovar in (select max(id_tovar) from pokup))
+
+SELECT user.name, user.tel, user.adr FROM user 
+where id_user <>all (select id_user from pokup where id_tovar = 2)
+
+insert into user(name, tel, adr) values('Паша','0661234567','Харьков')
+
+insert into user1 select * from user 
+delete from user1 where id_user in (select id_user from pokup where id_tovar = 1)
+
+alter table user_tmp change name name1 varchar(60), not null
+
+alter table user_tmp drop name1
+
+alter table user_tmp drop name
+
+alter table user_tmp add name varchar(60) not null after id_user
+
+drop table user_tmp
+
+alter table user_tmp modify id_user int(6) NOT NULL primary key auto_increment
+
+CREATE TABLE pokup_tmp(
+
+  id_pokup int(6) NOT NULL primary key auto_increment,
+  id_user int(6) not null,
+  id_tov int(6) not null,
+  dat date not null,
+  foreign key(id_user) references user_tmp(id_user)
+)
+
+alter table pokup_tmp add foreign key(id_tov) references tovar_tmp(id_tovar)
+
+alter table pokup_tmp add foreign key(id_tov) references tovar_tmp(id_tovar)
+
+
+alter table pokup_tmp modify id_pokup int(6) NOT NULL
+
+alter table pokup_tmp drop primary key
+
+
+CREATE TABLE `pokup_tmp` (  `id_pokup` int(6) NOT NULL,  `id_user` int(6) NOT NULL,  `id_tov` int(6) NOT NULL,  `dat` date NOT NULL,  KEY `id_user` (`id_user`),  KEY `id_tov` (`id_tov`),  CONSTRAINT `pokup_tmp_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user_tmp` (`id_user`),  CONSTRAINT `pokup_tmp_ibfk_2` FOREIGN KEY (`id_tov`) REFERENCES `tovar_tmp` (`id_tovar`)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+alter table pokup_tmp drop foreign key pokup_tmp_ibfk_1
+
+alter table pokup_tmp drop foreign key pokup_tmp_ibfk_2
+
+alter table pokup_tmp drop index id_user
+
+alter table pokup_tmp drop index id_tov
+

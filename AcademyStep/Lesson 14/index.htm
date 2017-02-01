@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+<form name="Form1">
+	<input name="text1" value="azaza" onfocus="fc(this); return false;" onkeyup="kp(this); return false;"  onblur="ob(this); return false;">
+	<button name="button" onclick="cl(); return false;">Кнопка</button>
+
+</form>
+
+
+<script>
+	function ob(elem){
+    	elem.style.border = "1px solid black";
+		elem.style.color = "black";
+	}
+
+	function kp(elem){
+        var simvol = elem.value.substr(elem.value.length - 1);
+		if (simvol == "'") {
+			var val = elem.value.substring(0, elem.value.length - 1);
+			elem.value = val;
+		}
+
+	}
+
+	function fc(elem){
+		elem.style.border = "3px solid green";
+		elem.style.color = "blue";
+
+	}
+
+	function cl(){
+    	document.forms[0].text1.value = "нажал";
+		//document.forms[0].elements["text1"].value = "нажал2";
+
+	}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+  <style>
+
+
+  </style>
+</head>
+
+<body>
+
+	<div id="tovar" style="display: none" >
+    	<span>Компьютеры</span>
+		<span>Принтеры</span>
+		<span>АудиоВидо</span>
+	</div>
+
+	   <div id="div11" style="display: none;">
+   			<img src="pk.jpg" id="img1">
+   			<img src="pr.jpg" id="img2">
+   			<img src="vi.jpg" id="img3">
+   		</div>
+
+
+   <table>
+   		<tbody  style="background-color: #CC10CC; cursor: pointer;">
+   			<tr>
+   				<td onclick="sort();">Товар</td>
+				<td>Вид</td>
+   			</tr>
+   		</tbody>
+
+
+
+		<tbody id="tbod" style="background-color: #1CCC3D">
+
+
+		</tbody>
+	</table>
+
+</body>
+
+
+	<script>
+
+	var ts = document.getElementById('tovar').getElementsByTagName('span');
+	var rinner =  new Array();
+
+	for (var i=0; i < ts.length; i++) {
+        rinner[i] = ts[i].innerHTML;
+	}
+
+    var rtbod = document.getElementById('tbod');
+
+	for (var i=0; i < rinner.length; i++) {
+		var rtr = document.createElement('tr');
+		rtr.innerHTML = '<td>' + rinner[i] + '</td>';
+		rtbod.appendChild(rtr);
+	}
+
+
+
+/*
+	var timg = document.getElementById('div11').getElementsByTagName('src');
+	var rinner =  new Array();
+
+	for (var i=0; i < ts.length; i++) {
+        rinner[i] = ts[i].innerHTML;
+	}
+
+    var rtbod = document.getElementById('tbod');
+
+	for (var i=0; i < rinner.length; i++) {
+		var rtr = document.createElement('tr');
+		rtr.innerHTML = '<td>' + rinner[i] + '</td>';
+		rtbod.appendChild(rtr);
+	}
+*/
+
+
+	function sort() {
+		var rtd = document.getElementById('tbod').getElementsByTagName('td');
+        var rs = new Array();
+
+		for (var i=0; i <rtd.length; i++){
+			rs[i] = rtd[i].innerHTML;
+		}
+
+		rs.sort();
+
+		for (var i=0; i < rs.length; i++){
+			rtd[i].innerHTML = rs[i];
+		}
+	}
+	</script>
+
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+</head>
+
+<body id="bod">
+
+	<a id="ssilka" href="#" onclick="deti(); return false;">ссылка</a>
+
+	<script>
+    	function deti(){
+			var ra=document.getElementById('ssilka');
+            for(var i=0; i<ra.childNodes.length; i++){
+            	alert(ra.childNodes[i].nodeName + '  ' + ra.childNodes[i].textContent);
+			}
+    	}
+	</script>
+
+</body>
+
+</html>

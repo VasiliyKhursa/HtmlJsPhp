@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Home25</title>
+</head>
+
+<body>
+
+	<form name="iform" method="post" action="index_24.php" target="ifram" enctype="multipart/form-data">
+		<input type="file" name="userFile[]" multiple="true" onchange="formFunc();"/>
+		<input type="submit" value="Submit"/>
+		<input type="hidden" name="MAX_FILE_SIZE" value="5000000"/>
+
+	</form>
+
+
+	<iframe name="ifram" style="width:800px; height:600px;"></iframe>
+
+</body>
+
+</html>

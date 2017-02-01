@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="script.js"></script>
+<style>
+ #div0 {background-color:silver; width:1024px; text-align:justify;}
+</style>
+</head>
+<body>
+<div id="div0">Наличие сайта в выдаче поисковых систем по ключевым запросам – это всегда было, есть и будет базовым и самым популярным видом интернет-рекламы. Поэтому продвижение в поисковых системах – это беспроигрышный вариант для любого типа бизнеса. Поисковое продвижение сайта является выгодным как для увеличения продаж, так и для увеличения узнаваемости среди потенциальных покупателей.</div>
+<div id="div00" style="display:none;">Наличие сайта в выдаче поисковых систем по ключевым запросам – это всегда было, есть и будет базовым и самым популярным видом интернет-рекламы. Поэтому продвижение в поисковых системах – это беспроигрышный вариант для любого типа бизнеса. Поисковое продвижение сайта является выгодным как для увеличения продаж, так и для увеличения узнаваемости среди потенциальных покупателей.</div>
+<script type="text/javascript">
+     function getCookieValue(name) { //стандартная функция извлечения cookie
+            var cookieValue = document.cookie;
+            var cookieStart = cookieValue.indexOf(name);
+            if (cookieStart == -1)
+                cookieValue = null;
+            else {
+                cookieStart = cookieValue.indexOf("=", cookieStart) + 1;
+                var cookieEnd = cookieValue.indexOf(";", cookieStart);
+                if (cookieEnd == -1)
+                   {cookieEnd = cookieValue.length;}
+                cookieValue = unescape(cookieValue.substring(cookieStart, cookieEnd));
+            }
+            return cookieValue;
+     }
+     var int=setInterval('func_rng_cookie();', 100); //интервальный запуск функции "опроса" cookie
+     var rng_search;
+     var content=div0.innerHTML;
+     function func_rng_cookie() {
+        if(getCookieValue('range')!=null) { //извлечение cookie (оно же - поисковый параметр с первой страницы)
+           rng_search=getCookieValue('range');
+           iskat(rng_search); //Range-выделения на этой странице 
+        }
+     }
+</script>
+</body>
+</html>

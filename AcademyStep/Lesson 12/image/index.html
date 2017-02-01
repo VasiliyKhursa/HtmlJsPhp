@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+  <style>
+  		#div0{
+	  		  width: 200px;
+			  height: 200px;
+			  position: relative;
+  		}
+		#div1{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #5ACC30;
+			  position: absolute;
+			  top: 0px;
+			  left:  0px;
+			  font-size: 20pt;
+			  color: #000000;
+			  /*display: none; */
+  		}
+		#div2{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #154FCC;
+			  position: absolute;
+			  top: 0px;
+			  left:  250px;
+			  display: none;
+  		}
+		#div3{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #B715CC;
+			  position: absolute;
+			  top: 250px;
+			  left:  0px;
+			  display: none;
+  		}
+		#div4{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #CC262C;
+			  position: absolute;
+			  top: 250px;
+			  left:  250px;
+			  display: none;
+  		}
+
+
+  		#div11{
+	  		  width: 200px;
+			  height: 200px;
+			  position: relative;
+  		}
+
+
+
+
+		#img1 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 0px;
+			left: 0px;
+		}
+
+		#img2 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 0px;
+			left: 100px;
+		}
+
+		#img3 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 100px;
+			left: 0px;
+		}
+
+		#img4 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 100px;
+			left: 100px;
+		}
+
+
+  </style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+	<!--<img src="img/gruha.jpg" id="img_gruha" name="img" onmouseover="mover('img')" onmouseout="mout('img')" onmousedown="mdown()" onmouseup="mupp()">-->	 <!--ллучше ккартнке деелатьь по name(document.imges) а не по id  -->
+
+   <img src="img/gruha.jpg" name='imm' onclick="nextImage('imm')">
+
+   <div id="div11">
+   <img src="img/gruha.jpg" id="img1">
+   <img src="img/klubnika.jpg" id="img2">
+   <img src="img/malina.jpg" id="img3">
+   <img src="img/vihnya.jpg" id="img4">
+
+   </div>
+
+
+ <script>
+	var massiv = new Array();
+	//"img/gruha.jpg", "img/klubnika.jpg", "img/malina.jpg", "img/vihnya.jpg"
+
+
+	var rimg=document.getElementById("div11").getElementsByTagName("img");
+
+	for(var i = 0; i<rimg.length; i++){
+        massiv[i] = rimg[i].getAttribute("src");
+		//alert(massiv[i]);
+
+
+	}
+
+
+ 	var i = 0;
+
+function nextImage(elem) {
+	i++;
+	if (i==massiv.length) i = 0;
+
+	document.images[elem].src=massiv[i];
+
+ /*
+    var rimg=document.getElementById("div11").getElementsByTagName("img");
+	for (var j = 0; j < massiv.length ; j++){
+ 		if (i!=j) {
+            document.getElementById("div11").getElementsByTagName("img").
+ 		}
+ */
+	}
+
+
+}
+
+  </script>
+
+
+</body>
+
+</html>

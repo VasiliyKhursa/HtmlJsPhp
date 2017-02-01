@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+  <script>
+
+    var win;
+    function okno() {
+        win = window.open('', 'win1', 'width = 200, height = 200, top = 0, left = 500, scrollbars = 1');        //первый парметр = урл адрес, второй - имя (для джава скрипта), третий -
+        //win = window.open('', 'win1'); // окно откроеться как вкладка;
+        win.focus(); //окно на передний план;
+    }
+
+    function ekran() {
+        win.resizeTo(screen.width, screen.height);
+        win.moveTo(0, 0);
+        win.focus();
+    }
+
+    function textwrite(tex) {
+        if (win) {
+          if (!win.closed) {
+            win.document.write(tex);
+            win.focus();
+            } else {
+              Alert('Win close');
+            }
+
+        } else {
+              Alert('Win no');
+            }
+    }
+
+    function clos() {
+        if (win) {
+          if (win.opener) {
+            win.close();
+            } else {
+              Alert('Win close');
+            }
+        }  else {
+              Alert('Win no');
+            }
+    }
+
+     function but() {
+
+        win = window.open('', '', 'scrollbars = 1');
+        win.focus();
+        win.document.write('<html> <head> </head> <body>   <input id = "createdbutton" type="button" value="Ok" onclick = "funk(); funk2()">   </body> </html> ');
+        win.document.write('<script> function funk(){ document.getElementById("createdbutton"); createdbutton.setAttribute("style", "background-color: blue"); } </scr' + 'ipt> '); /*разрыв слова script - прикол document.write*/
+        win.document.write('<script> function funk2() { window.opener.document.getElementById("href11"); href11.setAttribute("style", "background-color: yellow"); } </scr' + 'ipt> '); /*разрыв слова script - прикол document.write window opener не работает*/
+        //win.document.write('<script> function mover(){ document.getElementById("createdbutton"); createdbutton.setAttribute("style", "background-color: green"); }  </scr' + 'ipt> '); /*разрыв слова script - прикол document.write*/
+
+     }
+
+     function butChange() {
+        document.getElementById("createdbutton");
+        createdbutton.setAttribute("font-family", "georgia");
+        win.focus();
+
+     }
+
+
+
+  </script>
+</head>
+
+<body>
+
+    <a href="HREF" onclick = "okno(); return false"> HREF</a>
+    <br>
+    <a href="HREF" onclick = "win.resizeTo(400, 400); win.focus(); return false"> Resize</a>
+    <br>
+    <a href="HREF" onclick = "win.resizeBy(400, 400); win.focus(); return false"> Resize+</a>  <!--размер нараститься-->
+    <br>
+    <a href="HREF" onclick = "win.resizeBy(-400, -400); win.focus(); return false"> Resize-</a>
+    <br>
+    <a href="HREF" onclick = "win.moveTo(600, 600); win.focus(); return false"> MoveTo</a>
+    <br>
+    <a href="HREF" onclick = "ekran(); return false"> Ekran</a>
+
+    <br>
+    <br>
+    <a href="HREF" onclick = "win = window.open('', 'scrollbars = 1', ''); return false"> Open</a>
+    <a href="HREF" onclick = "textwrite('Text in window'); return false"> Put Text</a>
+    <a href="HREF" onclick = "clos(); return false"> Close</a>
+    <br>
+
+    <br>
+    <a href="https://www.google.com.ua" onclick = "window.open(this.href); return false"> HREF GOOGLE</a>
+
+    <br>
+    <a href="#" onclick = "window.open('https://www.google.com.ua'); return false"> HREF GOOGLE 2</a>    <!--не отличаеться от предыдущего-->
+
+    <br>
+    <a href="#" onclick = "window.open('https://www.google.com.ua', '' , 'scrollbars = 1'); return false"> HREF GOOGLE 3</a>
+
+    <br>
+    <a href="#" onclick = "but(); return false"> But </a>
+
+
+    <br>
+    <br>
+    <a href="#" id = "href11" onclick = "butChange(); return false"> Changind text in button </a>
+
+    <form name="form1" action="program.html">
+        <input type = "text" name="str" value="param">
+        <input name="knopka" type="submit" value="Button">
+    </form>
+
+
+
+
+
+</body>
+
+</html>

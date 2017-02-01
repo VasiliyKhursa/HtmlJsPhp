@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+		<title>Lesson15</title>
+</head>
+
+<body id="bod">
+	<span id="sp">Insert</span>
+	<a href="#" onclick="rng1()"> HREF</a>
+
+	<br>
+
+	<img id="img1" src="gruha.jpg" onclick="location.href='http://google.com'">
+	<img id="img2" src="klubnika.jpg">
+	<img src="malina.jpg">
+
+	<br>
+
+	<a href="#" onclick="ocl();">Кнопка</a>
+    <a href="#" onclick="ocl2();">Кнопка2</a>
+
+	<script>
+    	var rsp = document.getElementById("sp");
+		var el_new = document.createElement("a");
+
+
+
+		el_new.setAttribute("href", "#") ;
+		el_new.setAttribute("style", "background-color: red");
+
+		var rng = document.createRange(); 			//
+		//rng.selectNode(rsp);						// устанавливаем начаальную точку
+		rng.selectNodeContents(rsp);				// обернуули, то что надо
+        rng.surroundContents(el_new);
+
+
+        function ocl() {
+        	var rbod = document.getElementById("bod");
+        	var rimg1 = document.getElementById("img1");
+			var rimg2 = document.getElementById("img2");
+            var rng = document.createRange(); 				// создем Ренж
+
+
+			rng.setStartBefore(rimg1);				// указываем начало ренжа
+            rng.setEndAfter(rimg2);					// указываем конец ренжа
+			rng.deleteContents(); 					// удалем контент
+
+            var ex = rng.extractContents();				// перемещаем
+
+
+			rbod.insertBefore(ex);						// вставвляем вконце
+        }
+
+		function ocl2(){
+            var rsp2 = document.getElementById("sp").childNodes[0];
+            rng.setStart(rsp2,14);
+			rng.setEnd(rsp2,5);
+			var str2 = rng.toString();
+			console.log(str2);
+		}
+
+	</script>
+        <br>
+    	<form name="form1">
+        	<input type="text" name="text1" value="первую">
+			<!-- <input type="button" onclick="gogo(text1.value);" value="Кнопка"> -->
+            <input type="button" onclick="go(text1.value);" value="Кнопка">
+		</form>
+
+        <div id="tex">Это, в первую очередь, объясняется принципами их работы. Здесь можно упомянуть и крос- сплатформенность, и преимущества интернета, как средства доступа к веб приложению из любой точки мира, и небольшие затраты на разворачивание инфраструктуры, и мириады интернет пользователей, готовых потреблять услуги веб-приложений и обогащать их создателей.</div>
+
+	<script>
+		var content = tex.innerHTML;
+
+		function go(txt) {
+
+            tex.innerHTML = content;
+
+            var pos = content.indexOf(txt);
+
+			var i = 0;
+			var rsp2 = document.getElementById("tex").childNodes[i];
+            while (pos != -1) {
+
+                console.log(pos);
+                console.log(txt.length);
+
+        		rng.setStart(rsp2, pos);
+				rng.setEnd(rsp2, pos + txt.length);
+
+				console.log(rng.toString());
+				//rng.deleteContents();
+
+
+                var el_new = document.createElement("a");					// создаем элемент
+                el_new.setAttribute("style", "background-color: red");
+
+				rng.surroundContents(el_new);								// оборачиваем ренж созданным элементом
+
+
+
+                i += 2;
+				rsp2 = document.getElementById("tex").childNodes[i];
+				var new_content = rsp2.textContent;
+                pos = new_content.indexOf(txt);
+            }
+
+		}
+
+		function gogo(txt) {
+        	if (txt != "" &&
+				txt.indexOf("'") == -1) {
+					location.href = "program.html?param="+txt;
+				}
+		}
+
+	</script>
+
+
+</body>
+
+</html>

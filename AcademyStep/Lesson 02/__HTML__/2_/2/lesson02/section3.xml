@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<?xml:stylesheet type="text/xsl" href="common/layout.xsl" ?>
+
+<lesson title="Урок №2: Введение в языки разметки" next="section4.xml" prev="section2.xml" summ="1">
+<h2>Многоуровневые списки.</h2>
+
+<p>Многоуровневые списки используют в тех случаях, когда требуется отразить иерархическую структуру, подчинение одних элементов другим. Наиболее ярким примером многоуровневого списка может служить оглавление сложного документа:
+</p>
+
+<ol style="font-size: 12pt; font-weight: bold;">
+<li>Все о разметке
+<ol style="font-size: 10pt; font-weight: normal; list-style-type: lower-alpha; padding-top: 5px;">
+	<li>Предназначение разметки</li>
+	<li>Важность синтаксически корректных и правильных документов</li>
+	<li>Об элементах, атрибутах и объектах</li>
+	<li>Дополнительная информация</li>
+</ol>
+</li>
+
+<li>Обзор структуры элементов
+<ol style="font-size: 10pt; font-weight: normal; list-style-type: lower-alpha;  padding-top: 5px;">
+	<li>Общие атрибуты</li>
+	<li>Дополнительная информация</li>
+</ol>
+</li>
+...
+</ol>
+
+
+<p>Для создания многоуровневого  списка просто вложите в любой из элементов списка еще один список. Это и будет список второго уровня. Для создания третьего уровня, вложите список в элемент второго уровня. И так далее. Пример:
+</p>
+
+<example number="2.3.1" title="Многоуровневый неупорядоченный список" href="samples/example_2.3.1.html">
+&lt;<tag>ul</tag>&gt;
+    &lt;<tag>li</tag>&gt;Элемент списка 1го уровня&lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;Элемент списка 1го уровня&lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;Элемент списка 1го уровня с вложенным списком
+        &lt;<tag>ul</tag>&gt;
+            &lt;<tag>li</tag>&gt;Элемент списка 2го уровня&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Элемент списка 2го уровня с вложенным списком
+                &lt;<tag>ul</tag>&gt;
+                    &lt;<tag>li</tag>&gt;Элемент списка 3го уровня&lt;/<tag>li</tag>&gt;
+                    &lt;<tag>li</tag>&gt;Элемент списка 3го уровня&lt;/<tag>li</tag>&gt;
+                    &lt;<tag>li</tag>&gt;Элемент списка 3го уровня&lt;/<tag>li</tag>&gt;
+                    &lt;<tag>li</tag>&gt;Элемент списка 3го уровня&lt;/<tag>li</tag>&gt;
+                &lt;/<tag>ul</tag>&gt;
+            &lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Элемент списка 2го уровня&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Элемент списка 2го уровня&lt;/<tag>li</tag>&gt;
+        &lt;<tag>ul</tag>&gt;
+    &lt;/<tag>li</tag>&gt;
+&lt;/<tag>ul</tag>&gt;
+</example>
+
+<p><span class="attension">Внимание! Вкладывать элемент <code>ul</code> или <code>ol</code> необходимо только в 
+элемент <code>li</code>. Нельзя вкладывать список в список непосредственно!
+</span>
+</p>
+
+<p>При выполнении примера вы, несомненно, обратили внимание на тот факт, что типы маркеров для каждого уровня списка изменяются. Первый уровень маркируется как "disc", второй - "circle", третий и далее - "square". Проделав тот же опыт с упорядоченными списками, вы убедитесь в том, что каждый следующий уровень списка не меняет тип нумерации. Эту задачу придется  решать самостоятельно.
+</p>
+<p>Одним из вариантов ее решения является использование стиля для вложенных списков:
+</p>
+<example number="2.3.2" title="Многоуровневый упорядоченный список" href="samples/example_2.3.2.html">
+&lt;<tag>ol</tag> <attr>style</attr>=<str>"font-weight: bold;"</str>&gt;
+    &lt;<tag>li</tag>&gt;Зима
+        &lt;<tag>ol</tag> <attr>style</attr>=<str>"list-style-type: lower-alpha; font-weight: normal;"</str>&gt;
+            &lt;<tag>li</tag>&gt;Декабрь&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Январь&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Февраль&lt;/<tag>li</tag>&gt;
+        &lt;/<tag>ol</tag>&gt;
+    &lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;Весна
+        &lt;<tag>ol</tag> <attr>style</attr>=<str>"list-style-type: lower-alpha; font-weight: normal;"</str>&gt;
+            &lt;<tag>li</tag>&gt;Март&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Апрель&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Май&lt;/<tag>li</tag>&gt;
+        &lt;/<tag>ol</tag>&gt;
+    &lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;Лето
+        &lt;<tag>ol</tag> <attr>style</attr>=<str>"list-style-type: lower-alpha; font-weight: normal;"</str>&gt;
+            &lt;<tag>li</tag>&gt;Июнь&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Июль&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Август&lt;/<tag>li</tag>&gt;
+        &lt;/<tag>ol</tag>&gt;
+    &lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;Осень
+        &lt;<tag>ol</tag> <attr>style</attr>=<str>"list-style-type: lower-alpha; font-weight: normal;"</str>&gt;
+            &lt;<tag>li</tag>&gt;Сентябрь&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Октябрь&lt;/<tag>li</tag>&gt;
+            &lt;<tag>li</tag>&gt;Ноябрь&lt;/<tag>li</tag>&gt;
+        &lt;/<tag>ol</tag>&gt;
+    &lt;/<tag>li</tag>&gt;
+&lt;/<tag>ol</tag>&gt;
+</example>
+
+<p>Для еще большего визуального отличия элементов первого и второго уровня, к внешнему списку применен полужирный  шрифт (<b>font-weight: bold;</b>). В каждом вложенном списке жирность шрифта возвращается в норму (<b>font-weight:  normal;</b>)
+</p>
+
+</lesson>

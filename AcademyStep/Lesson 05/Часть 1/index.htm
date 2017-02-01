@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+  <link rel="stylesheet"; type="text/css"; href="css/style.css">
+</head>
+
+<body style="text-align: justify">
+    <div id="container">
+        <div id="logo">
+		logo
+        </div>
+
+		<div id="menu">
+            <div class="cell">
+                <a class="man" href="html/info.html" target="if2" alt="TV"> О комании </a>
+                <a class="man" href="html/yslygi.html" target="if2" alt="TV" > <img src="image/knop2.png"> </a>
+                <a class="man" href="html/koontakti.html" target="if2" alt="TV"> <img src="image/knop3.png"> </a>
+            </div>
+
+		</div>
+
+		<div id="find">
+            <form name="forma" metod="get" action="html/program.html">  <!--- метод гет и пост, action="html"--->
+                <div class="find1">
+                    <select name="sel" size="1">
+                        <option value="sait" > Сайт </option>
+                        <option value=design"> Design </option>
+                        <option valeu="seo"> SEO </option>
+                    </select>
+                </div>
+
+                <br> <input type="text" name="text1" value="введите" size="20" maxlength="50">  <!-- maxlength="50" - максимальная длинна вводимых символов -->   <!-- тип - text, password и тд. -->
+                <input id="submit3" type="submit" value="Очистить" onclick="forma text1 value= ''; ">   <!--onclick обработчик нажатия -->
+                <input id="submit1" type="submit" value="Поиск" onclick="alert('Ищем'); ''; " onmouseover="document.getElementById('azaza').style.visibility='visible';"  onmouseout="document.getElementById('azaza').style.visibility='hidden';">   <!--onclick обработчик нажатия -->
+
+
+
+				<br> <input type="checkbox" neme="variant" value="red" checked="checked"> Красный
+                <br> <input type="checkbox" neme="variant" value="blue" checked="checked"> Синий
+                <br> <input type="checkbox" neme="variant" value="yellow"> Желтый
+            </form>
+
+            <form>
+
+            </form>
+		</div>
+
+
+
+	   <div id="content">
+	   		<div id="azaza" > text </div>
+ 			<iframe src="html/info.html" style="width:100%; height:100%"; name="if2"; frameborder="0"></iframe>
+       </div>
+
+
+
+       <div id="ssilki">
+	   		<div>
+           <div class="ssilka1">
+                <div class="ssilka1_1">
+                    <a href="html://thecodeplayer.com" alt="TV"> <img style="float: left" src="image/icon_web.png" > </a>
+                </div>
+                <div class="ssilka1_1">
+                    <a class="roll" href="html://thecodeplayer.com" alt="TV"> онлайн-уроки по HTML / CSS / JS </a>
+                </div>
+           </div>
+
+           <div class="ssilka2">
+                <div class="ssilka2_1">
+                    <a href="html://thecodeplayer.com" alt="TV"> <img style="float: left" src="image/icon_web.png" > </a>
+                </div>
+                <div class="ssilka2_1">
+                    <a href="html://thecodeplayer.com" alt="TV"> информация обо всех CSS-свойствах </a>
+                </div>
+           </div>
+
+           <div class="ssilka3">
+                <div class="ssilka3_1">
+                    <a href="html://thecodeplayer.com" alt="TV"> <img style="float: left" src="image/icon_web.png" > </a>
+                </div>
+                <div class="ssilka3_1">
+                    <a href="html://thecodeplayer.com" alt="TV"> задачки на знание языка JavaScript </a>
+                </div>
+           </div>
+           </div>
+
+           <iframe width="324" height="180" src="https://www.youtube.com/embed/2aXIBGmAjRQ" frameborder="0" allowfullscreen></iframe>
+
+		   <br>
+
+		   azaza
+
+		   <br>
+
+		   <video src="media/kino.mp4" style="width:324px; height: 180px;" controls="controls"></video>
+
+           music
+
+			<audio src="media/muz.mp3" style="width:324px; height: 20px;" controls></audio>
+
+            flash
+
+			<object type=application/x-shockwave-flash data=multimedia/bubble.swf width=324 height=181></object>
+
+       </div>
+
+        <div id="foter" style="text-align: center">
+
+
+			<div class="border">                                <!--- Делаем дополнительный блок, чтобы применить стиль ---->
+                copiright
+            </div>
+
+
+			<div  class="border">
+				<form name="forma" metod="get" action="html/program.html">  <!--- метод гет и пост, action="html"--->
+            		<input id="submit1" type="button" value="Поиск">
+				</form>
+			</div>
+
+
+       </div>
+
+    </div>
+</body>
+
+</html>

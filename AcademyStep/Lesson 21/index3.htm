@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div id="div0">
+		<div id="menu" style="background-color: red; height: 50px;">Меню</div>
+
+		<div id="div1" style="display: none">
+        	<div id="div11" style="height: 50px">Пункт1</div>
+			<div id="div12" style="height: 50px">Пункт2</div>
+			<div id="div13" style="height: 50px">Пункт3</div>
+		</div>
+	</div>
+
+	<script>
+/*
+       $(document).ready(function() {
+       		$("#menu").mouseover(function(){
+       			$("#div1").slideDown(1000);
+       		});
+
+		   $("#div0").mouseout(function(){
+       			$("#div1").slideUp(1000);
+       		});
+	   });
+*/
+	   $(document).ready(function() {
+       		$("#menu").mouseenter(function(){
+       			$("#div1").slideDown(1000);
+       		});
+
+		   $("#div0").mouseleave(function(){
+       			$("#div1").slideUp(1000);
+       		});
+	   });
+
+
+	</script>
+
+</body>
+
+</html>

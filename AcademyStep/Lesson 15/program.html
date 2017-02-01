@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<SCRIPT LANGUAGE="javascript">  //начало скрипта
+var get=decodeURIComponent(location.search.substr(1)); //получение параметра по методу get
+newSet = "";
+for (var i = 0; i <= get.length; i++) {  //преобразование параметра к читаемому виду
+      switch(get.charAt(i)) {
+        case "+":
+          newSet += " ";
+          break;
+        case "&":
+          newSet += " и ";
+          break;
+        default:
+          newSet += get.charAt(i);
+      }
+} 
+document.write("Вы ввели(выбрали) : " + newSet + ".");  //отображение параметра
+</SCRIPT> <!-- конец скрипта -->  
+</head>
+<body>
+</body>
+</html>

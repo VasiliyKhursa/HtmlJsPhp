@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Мой первый сайт</title>
+  <meta charset=utf-8 />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+<div id="container">
+<div id="logo">
+logo
+</div>
+
+<div id="menu">
+menu
+</div>
+
+<div id="poisk">
+poisk
+</div>
+
+<div id="kontent">
+kontent
+</div>
+
+<div id="ssilki">
+ssilki
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+footer
+</div>
+</div>
+
+<script>
+var sc=screen.width; // width ЭКРАНА ПОЛЬЗОВАТЕЛЯ
+if(sc<1024) {
+var koef_klient=sc/1024; //"КОЭФФИЦИЕНТ ЗАМЕНЫ width,height" ДЛЯ ВСЕХ БЛОКОВ+ДЛЯ "СТАНДАРТА" font-size
+var rdiv=document.body.getElementsByTagName("div");
+for(var i=0; i<rdiv.length; i++) {
+   //СТАВИМ НОВЫЙ width, height ВСЕМ БЛОКАМ(offsetWidth,offsetHeight-ТЕКУЩИЕ width,height БЛОКА), МЕНЯЕМ font-size, ИСХОДЯ ИЗ НАЧАЛЬНОЙ 11pt
+   rdiv[i].setAttribute("style", "width:"+rdiv[i].offsetWidth*koef_klient+"px; height:"+rdiv[i].offsetHeight*koef_klient+"px; font-size:"+11*koef_klient+"pt;");
+}
+}
+</script>
+
+</body>
+
+</html>

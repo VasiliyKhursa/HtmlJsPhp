@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Home15</title>
+
+	<style>
+	td {
+		border: solid 1px black;
+	}
+
+	</style>
+</head>
+
+<body>
+
+	<script>
+    document.body.innerHTML = "<table id='tabl'></table>";
+	var ttable = document.getElementsByTagName('table');
+
+	var str = String();
+	for (var i=0; i < 6; i++){
+		 str+= "<tr></tr>";
+	}
+	ttable[0].innerHTML = str;
+
+	var trarr = document.getElementsByTagName("tr");
+    str = "";
+
+	for (var i = 0; i < 6; i++) {
+		 str += "<td></td>";
+	}
+	for (var i = 0; i < trarr.length; i++) {
+		 trarr[i].innerHTML = str;
+	}
+
+	var tdarray = document.getElementsByTagName("td");
+	console.log(tdarray);
+
+	for (var i = 0; i < tdarray.length; i++) {
+		tdarray[i].setAttribute('onclick','func(this);');
+	}
+
+
+	var trarray = document.getElementsByTagName("tr");
+
+	for (var i = 0; i < trarray.length; i++) {
+        var tdarray = trarray[i].getElementsByTagName('td');
+		for(var j = 0 ; j<tdarray.length; j++){
+			tdarray[j].innerHTML = 10 + i*10 + j + 1;
+		}
+	}
+
+	</script>
+
+
+	<script>
+    var rng = document.createRange();
+	//var start = document.getElementsByTagName("td")[4];
+	//var end = document.getElementsByTagName("td")[16];
+
+	//rng.setStartBefore(start);
+	//rng.setEndBefore(end);
+	//rng.setStart(start, 0);
+	//rng.setEnd(end, 0);
+
+	//var str2 = rng.toString();
+	//console.log(str2);
+	//console.log(rng);
+	//rng.deleteContents();
+
+    var elem1 = -1; 		// точка1
+	var elem2 = -1; 		// точка2
+
+    function func(elem) {
+    	if (elem1 == -1) {
+    		elem.setAttribute('style','background-color:red;')
+            elem1 = elem;
+    	}
+		else if (elem2 == -1) {
+            elem2 = elem;
+            elem.setAttribute('style','background-color:blue;')
+			setTimeout(timer, 1000);
+		}
+    }
+
+	function timer() {
+        if (elem1.offsetTop > elem2.offsetTop) {
+			rng.setStartBefore(elem2);
+			rng.setEndAfter(elem1);
+        }
+		else if (elem1.offsetTop < elem2.offsetTop) {
+            rng.setStartBefore(elem1);
+			rng.setEndAfter(elem2);
+		}
+		else {
+			if (elem1.offsetLeft > elem2.offsetLeft) {
+				rng.setStartBefore(elem2);
+				rng.setEndAfter(elem1);
+	        }
+			else if (elem1.offsetLeft < elem2.offsetLeft) {
+	            rng.setStartBefore(elem1);
+				rng.setEndAfter(elem2);
+			}
+		}
+
+
+        rng.deleteContents();
+        elem1 = -1;
+        elem2 = -1;
+	}
+
+	</script>
+</body>
+
+</html>

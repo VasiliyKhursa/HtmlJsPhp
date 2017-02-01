@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+  <script src="script.js"></script>
+  <style>
+  		#div0{
+	  		  width: 500px;
+			  height: 500px;
+			  position: relative;
+  		}
+		#div1{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #5ACC30;
+			  position: absolute;
+			  top: 0px;
+			  left:  0px;
+			  font-size: 20pt;
+			  color: #000000;
+			  /*display: none; */
+  		}
+		#div2{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #154FCC;
+			  position: absolute;
+			  top: 0px;
+			  left:  250px;
+			  display: none;
+  		}
+		#div3{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #B715CC;
+			  position: absolute;
+			  top: 250px;
+			  left:  0px;
+			  display: none;
+  		}
+		#div4{
+	  		  width: 250px;
+			  height: 250px;
+			  background: #CC262C;
+			  position: absolute;
+			  top: 250px;
+			  left:  250px;
+			  display: none;
+  		}
+
+  </style>
+
+  <script>
+  /*
+  setTimeout('div1.style.display="block"', 1000);
+  setTimeout('div2.style.display="block"', 2000);
+  setTimeout('div3.style.display="block"', 3000);
+  setTimeout('div4.style.display="block"', 4000);
+  */
+
+  var int = setInterval('clock()', 1000);
+
+  function clock(){
+  	var dat = new Date();
+	var vremya;
+
+	vremya = dat.getHours() + ':'+dat.getMinutes() + ':'+dat.getSeconds();
+    div1.innerHTML = vremya;
+  }
+
+  </script>
+</head>
+
+<body>
+
+
+	<!--<img src="img/gruha.jpg" id="img_gruha" name="img" onmouseover="mover('img')" onmouseout="mout('img')" onmousedown="mdown()" onmouseup="mupp()">-->	 <!--ллучше ккартнке деелатьь по name(document.imges) а не по id  -->
+
+   <img src="img/gruha.jpg" name='imm' onclick="nextImage('imm')">
+
+
+   <div id="div0">
+   		<div id="div1" onclick="clearInterval(int)"></div>
+        <div id="div2"></div>
+		<div id="div3"></div>
+		<div id="div4"></div>
+   </div>
+
+
+
+
+
+</body>
+
+</html>

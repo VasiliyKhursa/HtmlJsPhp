@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+</head>
+
+<body>
+    <script>
+  var inter = setInterval('funcInt()', 100);
+	</script>
+
+	<span id="toelem" style="position: absolute; top: 0px; left: 0px; color: red; font-size: 20pt; font-weight: bold;" onmouseover="clearInerval(inter)">Я лечу</span>
+
+	  <script>
+
+
+  var x = 0;
+  var y = 0;
+  var int = 10;
+
+  var ygol = 30;
+  var ygol_pi = 30 * Math.PI / 180;
+  var sin_ygol =  Math.sin(ygol_pi);
+  var cos_ygol =  Math.cos(ygol_pi);
+
+
+
+  function funcInt() {
+  	x = x + int*cos_ygol;
+	y = y + int*sin_ygol;
+
+	if (x > 800) x = 0;
+	if (y > 800) y = 0;
+
+  	document.getElementById('toelem').style.top= y + 'px';
+  	document.getElementById('toelem').style.left= x + 'px';
+  }
+	</script>
+
+	<div id="div123" style="width: 100px; height: 100px; background: #44CC4F; position: relative; top: 500px; left: 500px"></div>
+	<link href="#" onclick="click()">
+
+	<script>
+
+
+
+	</script>
+
+</body>
+
+</html>

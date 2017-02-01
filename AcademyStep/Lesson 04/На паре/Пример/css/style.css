@@ -1,0 +1,55 @@
+body{
+	background: #0066CC;
+}
+
+#container {
+	position: relative;
+	background: whitesmoke;
+	width: 1024px;
+	/*(height НЕ УКАЗЫВАЕТСЯ!!!) */
+	margin: 0px auto;
+}
+
+#logo {
+	background: cadetblue;
+	width: 1024px;
+	height: 200px;
+}
+
+#menu {
+	background: steelblue;
+	width: 324px;
+	height: 50px;
+}
+
+#poisk {
+	position: absolute;
+	background: cornflowerblue;
+	width: 700px;
+	height: 50px;
+	left: 324px;
+	top: 200px;
+}
+
+#kontent {
+	background: white;
+	width: 700px;
+	float: left;
+}
+
+#ssilki {
+	background: lightcoral;
+	width: 324px;
+	float: right;
+}
+
+#footer {
+	background: burlywood;
+	width: 1024px;
+	height: 30px;
+}
+
+#clear {
+	clear:both;
+}
+

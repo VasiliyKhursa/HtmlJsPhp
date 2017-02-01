@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Lesson18</title>
+	<style>
+
+    #site {
+	    width: 1024px;
+		height: 1000px;
+	    background-color: silver;
+		border: 1px solid black;
+	    margin: 0 auto;
+    }
+
+	#fon1400 {
+    	background-color: khaki;
+		background-image: url(fon1400.png);
+
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+
+
+	}
+
+	#fon2000 {
+    	background-color: khaki;
+		background-image: url(fon2000.png);
+
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+
+
+	}
+
+	#fon2600 {
+    	background-color: khaki;
+		background-image: url(fon2600.png);
+
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+
+
+	}
+
+	#fon4000 {
+    	background-color: khaki;
+		background-image: url(fon4000.png);
+
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+
+
+	}
+	</style>
+
+</head>
+
+<body>
+
+
+	<script>
+    if (screen.width <= 1400) {
+        console.log("if  1");
+    	console.log(screen.width);
+    	document.write('<div id="fon1400">');
+    }
+	else if(screen.width > 1400 && screen.width < 2000) {
+		console.log("if  2");
+    	console.log(screen.width);
+        document.write('<div id="fon2000">');
+	}
+	else if(screen.width >= 2000 && screen.width < 2600) {
+		console.log("if  3");
+    	console.log(screen.width);
+        document.write('<div id="fon2600">');
+	}
+    else if(screen.width >= 2600 && screen.width < 4000) {
+    	console.log("if  4");
+    	console.log(screen.width);
+        document.write('<div id="fon4000">');
+	}
+
+	</script>
+
+
+    	<div id="site"></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <title>Lesson 19</title>
+    <link rel="stylesheet"; type="text/css"; href="css/style.css">
+    <script type="text/javascript" src="js/script.js"> </script>
+  </head>
+
+  <body id = "bod">
+    <a href="#" onclick='wind(); return false;'>Click </a>
+    <br>
+    <a href="#" onclick='win.resizeTo(400,400); win.focus(); return false;'> ResizeTo </a>
+    <br>
+    <a href="#" onclick='win.resizeBy(400,400); win.focus(); return false;'> ResizeBy 400 </a>
+    <br>
+    <a href="#" onclick='win.resizeBy(-400,400); win.focus(); return false;'> ResizeBy -400 </a>
+    <br>
+    <a href="#" onclick='win.moveTo(600,600); win.focus(); return false;'> MoveTo 600 </a>
+    <br>
+    <a href="#" onclick='scree(); return false;'; return false;> Screen </a>
+    <br>
+    <br>
+    <a href="#" onclick="win=window.open('','win_n','scrollbar=1'); return false;"> Open window </a>
+    <br>
+    <a href="#" onclick='textwright("text in window"); return false;'> Insert text </a>
+    <br>
+    <a href="#" onclick='clos(); return false;'> Close </a>
+    <br>
+    <a href="http://google.com" onclick='window.open(this.href); return false;'> Google com </a>
+    <br>
+    <a href="#" onclick='window.open("http://google.com","","scrollbar=1"); return false;'> Google com1 </a>
+    <form metod="GET" action="program.html" target="win_n">
+      <input type="texta" name ="param"> </input>
+      <input type="submit"> </input>
+    </form>
+
+  </body>
+
+</html>

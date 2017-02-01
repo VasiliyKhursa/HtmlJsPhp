@@ -1,0 +1,141 @@
+﻿body{
+	background: #0E1ECC;
+}
+
+#container{
+	width: 1024px;
+
+	background-color: #FFF941;
+	margin: 0px auto;
+	position: relative; /*Относительно этого блока*/
+}
+
+#logo{
+    width: 324px;
+	height: 150px;
+	background-color: #1ECC2A;
+	position: absolute; /*относительно блока container*/
+	top: 0px;
+	left: 0px;
+}
+
+
+
+
+#find{
+    width: 700px;
+	height: 150px;
+	background-color: #CC3DB0;
+	position: absolute;
+	top: 0px;
+	left: 324px;
+	display:table;
+}
+
+
+.forma_row{
+	display:table-row;
+}
+
+.forma_cell{
+	display:table-cell;
+}
+
+
+
+
+#menu{
+    width: 124px;
+	background-color: #79FFF7;
+	position: absolute;
+	top: 150px;
+	left: 0px;
+	display: table;		/*указываем то, что этот блок таблица*/
+}
+
+#menu_checkbox{
+	padding: 5px;
+	text-align: left;			/*горизонтальное центрирование*/
+
+}
+
+#content{
+	width: 600px;
+	background-color:#FFFFFF;
+	position: absolute;
+	top: 150px;
+	left: 124px;
+	border: 20px #000000;
+	padding: 3px;
+	box-sizing: border-box; /* не учитывает в рассчетах */
+
+}
+
+
+
+
+
+#links{
+	width: 300px;					/*ширина 300px*/
+	background-color: #FF3300;
+	position: absolute;				/*абсолютное положение относительно container*/
+	top: 150px;
+	left: 724px;
+
+}
+
+#link_head{
+	display: table;					/*блок будет как таблица*/
+}
+
+.link1{
+    display: table-row;				/*блок будет как строка таблицы*/
+}
+
+.link1_1{
+    display: table-cell;			/*блок будет как ячейка строки таблицы*/
+    vertical-align: middle;			/*вертикальное выравнивание*/
+	text-align: left;				/*горизонтальное выравнивание*/
+	padding: 5px;					/*отступ от всех краев*/
+	box-sizing: border-box;			/*учитывать отступ и не раширять блок*/
+}
+
+#link_radio{
+	text-align: center;
+}
+
+#link_submit{
+	text-align: center;
+}
+
+
+
+
+
+
+#copyrights{
+    width: 1024px;
+	height: 30px;
+	background-color: #00CCFF;
+	position: absolute;
+	top: 500px;
+	left: 0px;
+}
+
+.cell{
+	display: table-cell;		/*указываем то, что этот блок похож на ячейку таблицы*/
+	vertical-align: middle;		/*мы симитировали таблицу, по этому можем сделать вертикальное выравнивание по центру*/
+    padding-top: 5px;			/* отступ от вернего края блока Menu*/
+	/*padding-bottom: 0px;*/		/* отступ от нижнего края блока Menu*/
+	/*top:10px;*/
+	/*margin-top: 10px;*/
+
+
+
+	text-align: center;			/*горизонтальное центрирование*/
+
+}
+
+
+
+

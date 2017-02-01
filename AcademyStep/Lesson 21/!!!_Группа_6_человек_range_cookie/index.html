@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="script.js"></script>
+<style>
+ #div0 {background-color:silver; width:1024px; text-align:justify;}
+</style>
+</head>
+<body>
+<form name="form1">
+<input type="text" name="tex" size="40">
+<input type="button" value="искать сайт" onclick="div0.innerHTML=content; iskat(tex.value); go_cookie(tex.value);">
+</form>
+<br>
+<div id="div0">Это, в первую очередь, объясняется принципами их работы. Здесь можно упомянуть и крос- сплатформенность, и преимущества интернета, как средства доступа к веб приложению из любой точки мира, и небольшие затраты на разворачивание инфраструктуры, и мириады интернет пользователей, готовых потреблять услуги веб-приложений и обогащать их создателей.</div>
+
+<script type="text/javascript">
+     setCookie('range', '', -1); //очистка "старого" значения cookie - чтобы при загрузке(перезагрузке) вторая страница не "отмечала"
+     var content=div0.innerHTML;
+     var win=window.open('page.html'); //открытие новой вкладки+загрузка в нее второй страницы СРАЗУ
+     function setCookie(name, val, expMonth) { //стандартная функция установки cookie
+            var cook = name+"="+escape(val)+";";
+            if (expMonth != 0) {
+                var d = new Date();
+                d.setMonth(d.getMonth()+expMonth);
+                cook+="expires="+d.toUTCString()+";";
+            }
+            document.cookie = cook;
+     }
+     function go_cookie(rng) { //функция нажатия кнопки поиска (кроме собственно Range-выделения на этой странице)
+            win.document.getElementById("div0").innerHTML=win.document.getElementById("div00").innerHTML; //на "второй" странице "исходный" контент из "скрытого" div00 в "поисковый" div0
+            setCookie ("range", rng, 6); //установка cookie name="range", value=поисковое значение
+     }
+</script>
+</body>
+</html>

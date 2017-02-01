@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+
+<script>
+//js-АНАЛОГ asort
+var name_year=new Array();
+name_year['Marta']=35;
+name_year['Alex']=23;
+name_year['Pol']=41;
+var name_year_asort=js_asort(name_year);
+for(var name_year_asortVal in name_year_asort) {   //ПРОВЕРКА
+   alert(name_year_asortVal+' - '+name_year_asort[name_year_asortVal]);
+}
+function js_asort(a_s) {
+//ФОРМИРУЕМ ИЗ МАССИВА DOM-ДЕРЕВО ТАБЛИЦЫ
+var rbod=document.getElementsByTagName('body');
+rbod[0].setAttribute('id', 'body');
+var rbody=document.getElementById('body');
+var rtable=document.createElement('table');
+rtable.setAttribute('style', 'display:none;');
+var rtbody=document.createElement('tbody');
+rtbody.setAttribute('id', 'tbody');
+rtable.appendChild(rtbody);
+rbody.appendChild(rtable);
+for(var a_sVal in a_s) {
+   rtr=document.createElement('tr');
+   rtr.innerHTML='<tr><td>'+a_sVal+'</td><td>'+a_s[a_sVal]+'</td></tr>'
+   rtbody.appendChild(rtr);
+}
+//СОРТИРУЕМ DOM-ДЕРЕВО ТАБЛИЦЫ...
+  var r_tbody=document.getElementById('tbody');
+  var ar_tr=r_tbody.getElementsByTagName('tr');
+  var ar_tr_dom=new Array();
+  for(var i=0; i<ar_tr.length; i++) {
+        ar_tr_dom[i]=ar_tr[i];
+  }
+//...ПОЛЬЗОВАТЕЛЬСКАЯ СОРТИРОВКА - ПО ЗНАЧЕНИЮ ЭЛЕМЕНТА МАССИВА (ВТОРОМУ "РЕБЕНКУ" КАЖДОЙ СТРОКИ)
+ar_tr_dom.sort(sortTr);
+function sortTr (tr1, tr2) {
+         if (isNaN(tr1.childNodes[1].innerHTML) && isNaN(tr2.childNodes[1].innerHTML)) {
+             tr1=tr1.childNodes[1].innerHTML; tr2=tr2.childNodes[1].innerHTML
+         }
+         else {
+             tr1=parseInt(tr1.childNodes[1].innerHTML); tr2=parseInt(tr2.childNodes[1].innerHTML);
+         }
+         if (tr1 > tr2)
+                  return 1;
+         else if(tr1 == tr2)
+                  return 0;
+         else return -1;
+}
+//ИЗ ОТСОРТИРОВАННЫХ DOM-ЭЛЕМЕНТОВ tr ФОРМИРУЕМ ОТСОРТИРОВАННЫЙ МАССИВ (ПЕРВЫЙ "РЕБЕНОК" - ИНДЕКС, ВТОРОЙ "РЕБЕНОК" - ЗНАЧЕНИЕ)
+  var a_s_new=new Array();
+  for(var i=0; i<ar_tr_dom.length; i++) {
+        a_s_new[ar_tr_dom[i].childNodes[0].innerHTML]=ar_tr_dom[i].childNodes[1].innerHTML;
+  }
+return a_s_new;
+}
+</script>
+
+</body>
+
+</html>

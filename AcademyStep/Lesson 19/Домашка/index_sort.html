@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Lesson19_HomeSort</title>
+</head>
+
+<body>
+	<script>
+	//js-АНАЛОГ asort
+	var name_year = new Array(); //ИСХОДНЫЙ АССОЦИАТИВНЫЙ МАССИВ
+	name_year['Marta'] = 35;
+	name_year['Alex'] = 23;
+	name_year['Pol'] = 41;
+
+    console.log(name_year);
+	console.log("pol = " + name_year.Pol);
+	console.log("Alex = " + name_year['Alex']);
+
+    var name_year_asort;
+    var counter = 0;
+	// входящий масив
+	for (var name_year_asortVal in name_year) {
+		//ПРОВЕРКА – ЦИКЛ ПЕРЕБОРА АССОЦИАТИВНОГО МАССИВА
+	   console.log(name_year_asortVal + ' - ' + name_year[name_year_asortVal]);
+	   counter++;
+	}
+	console.log(counter);
+
+    for (var name_year_asortVal in name_year) {
+		//ПРОВЕРКА – ЦИКЛ ПЕРЕБОРА АССОЦИАТИВНОГО МАССИВА
+	   console.log(name_year_asortVal + ' - ' + name_year[name_year_asortVal]);
+	   counter++;
+	}
+
+
+    var i = 0;
+
+
+
+	// сортировка
+    name_year_asort = name_year.sort(function (b, a) {
+    	//console.log(i++);
+    	return (1);
+	});
+
+	for (var name_year_asortVal in name_year_asort) {
+		//ПРОВЕРКА – ЦИКЛ ПЕРЕБОРА АССОЦИАТИВНОГО МАССИВА
+	   console.log(name_year_asortVal + ' - ' + name_year_asort[name_year_asortVal]);
+	}
+
+
+
+	// вывод
+    /*
+	for (var name_year_asortVal in name_year_asort) {
+		//ПРОВЕРКА – ЦИКЛ ПЕРЕБОРА АССОЦИАТИВНОГО МАССИВА
+	   console.log(name_year_asortVal + ' - ' + name_year_asort[name_year_asortVal]);
+	}
+    */
+	// функция сортировки
+	function js_asort(a_s) {
+	//….
+	return a_s_new;
+
+    }
+
+
+
+
+	// пример
+
+	var Hash = new Array();
+	Hash['first key'] = 5;
+	Hash['second key'] = 25;
+	Hash['some key'] = 11;
+	Hash['four key'] = 16;
+	Hash['five key'] = 22;
+
+	console.log(Hash);
+
+
+
+	// IN: исходный хеш, имя параметра по которому сортируем
+	// OUT: отстортированный хеш
+	function ASort(aInput, name){
+	var aTemp = []; // временный массив
+	for (var sKey in aInput) {
+		// ключ и его значение
+		aTemp.push([sKey, aInput[sKey]]);
+	}
+
+	console.log (aTemp);
+
+
+	aTemp = aTemp.sort(function (){
+		return arguments[0][1] - arguments[1][1]
+	}); // сортируем временный массив
+
+	var aOutput = []; // это мы вернем
+	// собственно создаем выходной массив в нужном порядке
+	for (var nIndex = 0; nIndex < aTemp.length; nIndex++) {
+		aOutput[aTemp[nIndex][0]] = aTemp[nIndex][1];
+	}
+
+	delete aTemp; // убираем за собой
+	delete aInput; // по идее исходный массив тоже нужно удалить, но далеко не всегда. можно вынести за пределы функции, но не забывать там убирать мусор
+	return aOutput;
+	}
+
+
+	//Как это применять:
+	var SortedHash = ASort(Hash, 'someProp');
+
+	console.log(SortedHash);
+
+
+	//сортировка пузырьком
+
+	for(; ;) {
+		var sum  = 0;
+		for (var i = 0; i < b.length-1; i++) {
+			var temp;
+			if (b[i] > b[i+1]) {
+				temp = b[i];
+				b[i] = b[i+1];
+				b[i+1] = temp;
+				sum++;
+			}
+		}
+
+		if (sum == 0) break;
+	}
+
+
+</script>
+
+</body>
+
+</html>

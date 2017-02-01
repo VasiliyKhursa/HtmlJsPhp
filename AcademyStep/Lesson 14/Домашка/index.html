@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Home14</title>
+</head>
+
+<body>
+
+	<form name="Forma1" action="">
+		<input name="check1" type="checkbox" value="1" onclick="oc(this);"/> Вариант1 <br>
+        <input name="check2" type="checkbox" value="2" onclick="oc(this);"/> Вариант2 <br>
+		<input name="check3" type="checkbox" value="3" onclick="oc(this);"/> Вариант3 <br>
+		<input name="check4" type="checkbox" value="4" onclick="oc(this);"/> Вариант4 <br>
+		<input name="check5" type="checkbox" value="5" onclick="oc(this);"/> Вариант5
+		<br>
+		<input type="button" onclick="oclb();"  value="Disable"/>
+		<input type="button" onclick="oclb2();" value="Enable" />
+
+	</form>
+
+	<script>
+    	var checkArray = document.getElementsByTagName('input');
+		var count = 0;
+        console.log(checkArray);
+
+
+		for (var i = 0; i < checkArray.length; i++) {
+			if (checkArray[i].type == "checkbox") {
+
+			if (checkArray[i].checked == true) {
+               console.log(i, true);
+			}
+			else {
+               console.log(i, false);
+			}
+
+			}
+
+		}
+
+		for (var i = 0; i< checkArray.length; i++){
+             checkArray[i].checked = false;
+		}
+
+  		for (var i = 0; i < checkArray.length; i++) {
+			if (checkArray[i].type == "checkbox") {
+
+			if (checkArray[i].checked == true) {
+               console.log(i, true);
+			}
+			else {
+               console.log(i, false);
+			}
+
+			}
+		}
+/*
+		var formElements = Forma1.elements;
+
+		console.log(formElements);
+
+		if (formElements[i].checked) {
+			console.log(0);
+		}
+ */
+
+ 		function oc(elem) {
+
+			if (elem.checked == true){
+                count++;
+			}
+			else {
+				count--;
+			}
+ /*
+			if (count >= 2) {
+                var checkArray2 = document.getElementsByTagName('input');
+				for (var i=0; i < checkArray2.length; i++) {
+					if (checkArray2[i].checked == true){
+
+					}
+					else {
+                        checkArray2[i].disabled = true;
+					}
+				}
+			}
+			else {
+                for (var i=0; i < checkArray2.length; i++) {
+                	checkArray2[i].disabled = false;
+
+				}
+			}
+*/
+			console.log(elem, elem.checked, count);
+ 		}
+
+		function oclb(){
+            var checkArray3 = document.getElementsByTagName('input');
+
+			for (var i = 0; i < checkArray3.length - 1; i++) {
+                 checkArray3[i].disabled = true;
+			}
+		}
+
+		function oclb2(){
+			var checkArray3 = document.getElementsByTagName('input');
+			for (var i = 0; i < checkArray3.length; i++) {
+                 checkArray3[i].disabled = false;
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>

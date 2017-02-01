@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<style>
+	 .class1 {position:relative; background-color:gold; width:200px; height:200px;}
+	 .class2 {position:absolute; background-color:blue; width:100px; height:100px; top:50px; left:50px;}
+	</style>
+</head>
+<body>
+<div class="class1"><span>aaa</span>
+   <div class="class2"><span>bbb<a href="#">ccc</a>bbb</span></div>
+</div>
+	<a href="#" onclick="class_tag_nodeName();return false;">Фон nodeName</a>
+
+<div class="class1"><span>aaa</span>
+   <div class="class2"><span>bbb<a href="#">ccc</a>bbb</span></div>
+</div>
+	<a href="#" onclick="class_tag_nodeName();return false;">Фон nodeName</a>
+
+<div class="class1"><span>aaa</span>
+   <div class="class2"><span>bbb<a href="#">ccc</a>bbb</span></div>
+</div>
+	<a href="#" onclick="class_tag_nodeName();return false;">Фон nodeName</a>
+
+	<a href="#" id="link">Фон nodeName</a>
+
+<script type="text/javascript">
+
+	$(document).ready (function () {   																// запускается когда страница загрузится
+	   $("#link").click(function () {
+			$(".class2 span").css("background-color", "red");
+			$(".class2 a").css("background-color", "yellow");
+	   });  		//- доступ через id
+
+	   $("#link").mouseover(function () {
+			$(".class2 span").css("color", "orange");
+
+	   });
+
+    });
+
+
+     function class_tag_nodeName(){
+         var r_cl=document.body.getElementsByClassName("class2");
+		 for (var i=0; i<r_cl.length; i+=2) {
+            var r_tg=r_cl[i].getElementsByTagName("*");
+            for (var j=0; j<r_tg.length; j++) {
+              if(r_tg[j].nodeName=="SPAN") {
+                r_tg[j].style.backgroundColor="silver";
+              }
+              if(r_tg[j].nodeName=="A") {                 r_tg[j].style.backgroundColor="red";
+              }
+            }
+         }
+     }
+
+</script>
+</body>
+</html>

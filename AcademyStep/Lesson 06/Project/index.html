@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+	<link rel="stylesheet"; type="text/css"; href="css/style.css">
+</head>
+
+<body>
+	<div id="container">
+		<div id="forma">
+			<img src="image/fon.jpg" class="bj"> 
+			<form name="form" style="margin: 0px;">
+
+            	<div style="display: table-row" >
+                	<div id="forma_col1">
+						Логин
+					</div>
+
+					<div id="forma_col2">
+						<input type="text" name="loginInput" maxlength="40" id="forma_input_text">
+					</div>
+				</div>
+
+            	<div style="display: table-row" >
+                	<div id="forma_col1">
+						Пароль
+					</div>
+
+					<div id="forma_col2">
+						<input type="password" name="passwdInput" maxlength="40" id="forma_input_text">
+					</div>
+				</div>
+
+				<div style="display: table-row" >
+                	<div id="forma_col1">
+					</div>
+
+					<div id="forma_error" style="visibility: hidden">
+                    	<span style="color: red"> Error </span>
+					</div>
+				</div>
+
+            	<div style="display: table-row" >
+                	<div id="forma_col1">
+					</div>
+
+					<div id="forma_col2">
+						<input type="button" name="ButtonPswd" value="Войти" onclick="document.getElementById('forma_error').style.visibility='visible';">
+					</div>
+				</div>
+
+            	<div style="display: table-row" >
+                	<div id="forma_col1">
+					</div>
+
+					<div id="forma_col2">
+						<a class="roll" style="font-size: 14px" href="#" alt="TV" onclick="document.getElementById('profile').style.visibility='visible';"> Или зарегистрироваться... </a>
+					</div>
+				</div>
+  			</form>
+		</div>
+
+
+
+
+
+
+		<div id="profile" style="visibility: hidden">
+			<form name="profile_forma" style="margin: 0px;">
+            	<div style="display: table-row" >
+                	<div id="profile_col1">
+						Логин
+					</div>
+
+					<div id="profile_col2">
+						<input type="text" name="loginInput" maxlength="40" id="forma_input_text">
+					</div>
+				</div>
+
+            	<div style="display: table-row" >
+                	<div id="profile_col1">
+						Пароль
+					</div>
+
+					<div id="profile_col2">
+						<input type="password" name="passwdInput" maxlength="40" id="forma_input_text">
+					</div>
+ 				</div>
+
+            	<div style="display: table-row" >
+                	<div id="profile_col1">
+						Еще раз пароль
+					</div>
+
+					<div id="profile_col2">
+						<input type="password" name="passwdInput" maxlength="40" id="forma_input_text">
+					</div>
+				</div>
+
+				<div style="display: table-row" >
+                	<div id="profile_col1">
+						Имя
+					</div>
+
+					<div id="profile_col2">
+						<input type="text" name="loginInput" maxlength="40" id="forma_input_text">
+					</div>
+				</div>
+
+				<div style="display: table-row" >
+                	<div id="profile_col1">
+						Год рождения
+					</div>
+
+					<div id="profile_col2">
+						<select name="sel" size="1">
+                        	<option value="1991"> 1991 </option>
+                        	<option value="1992"> 1992 </option>
+                        	<option valeu="1993"> 1993 </option>
+                    	</select>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>

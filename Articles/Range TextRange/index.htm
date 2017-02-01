@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+
+<div id="ex2">
+  <h2>Соз|даем Range-объекта</h2>
+  <p>От третье|го символа заголовка до десятого символа это абзаца.</p>
+</div>
+<script>
+
+    // Найдем root-контейнер
+    var root =  document.getElementById('ex2');
+    // Найдем контейнеры граничных точек (в данном случае тестовые)
+    var start =  root.getElementsByTagName('h2')[0].firstChild;
+    var end =  root.getElementsByTagName('p')[0].firstChild;
+	//var rng2 = document.createRange();
+	//console.log(rng2);
+	console.log(root);
+    //if ( root.createRange ) {
+    if ( document.createRange() ) {
+      // Создаем Range
+      //var rng = root.createRange();
+	  var rng = document.createRange();
+      // Задаем верхнюю граничную точку, передав контейнер и смещение
+      rng.setStart( start, 3 );
+      // Аналогично для нижней границы
+      rng.setEnd( end, 10 );
+      // Теперь мы можем вернуть текст, который содержится в полученной области
+      console.log(rng.toString());
+    }
+	else
+      console.log('Вероятно, у вас Internet Explorer, смотрите реализацию TextRange ниже');
+
+
+</script>
+
+
+
+</body>
+
+</html>

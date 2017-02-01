@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body id="bod">
+	<div style="color:blue;">
+	элемент1
+	</div>
+
+	<span style="color:red;" onclick="cl2(this);">
+	элемент2
+	</span>
+
+    <br>
+	<a href="#" onclick="cl(); return false;">ssilka</a>
+
+	<script>
+		function cl(){
+    		var rbod = document.getElementById('bod');
+
+			for(var i=0; i<rbod.childNodes.length; i++){
+				if (rbod.childNodes[i].nodeName == "SPAN"){
+					rbod.childNodes[i].style.fontWeight = 'bold';
+				}
+			}
+		}
+	</script>
+
+	<script>
+		function cl2(elem){
+		  if (elem.getAttribute('style').indexOf('res')!= -1){
+			   elem.setAttribute('id', 'red1');
+			   elem.setAttribute('style', 'font-size:20pt');
+		  }
+
+		}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+JS:
+	https://learn.javascript.ru/regexp-methods#regexp-test-str					- методы для регулярных выражений
+	https://learn.javascript.ru/
+	https://learn.javascript.ru/array-methods									- методы для работы с массивами
+	https://learn.javascript.ru/array-iteration									- методы для перебора массива
+	https://learn.javascript.ru/string											- методы для работы со строками
+	
+Уроки по разработке сайтов:
+
+
+https://www.codecademy.com/en/courses/getting-started-v2/3/5?curriculum_id=506324b3a7dffd00020bf661				- приколные занятия

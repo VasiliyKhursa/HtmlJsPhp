@@ -1,0 +1,114 @@
+﻿<html>
+<!--<!DOCTYPE HTML>-->
+<head>
+	<title>Untitled</title>
+	<script src="js/function.js"></script>
+	<style>
+    	#div1{
+	    	width: 200px;
+			height: 200px;
+			background-color: #34CC3C;
+			position: relative;
+    	}
+
+		#div2{
+        	width: 100px;
+			height: 100px;
+			background-color: #102ACC;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+
+		#primer1{
+        	background-color: #CC58BD;
+		}
+		#men {display: table;
+			display: table-cell;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			vertical-align: middle;
+			font-family: georgia;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 10pt;
+			color: #262d8d;
+			background: #889296;
+			border:1px solid black;
+	   		border-radius: 6px;
+		}
+
+
+	</style>
+</head>
+
+
+<body id="div0" onclick="cl(this);" onkeypress="kp(event);" onmousemove="funcMouseMove();">   <!--для мозилы нужно передаваать параметр!!! -->
+
+<!--
+	<div id="div1" onclick="cl(this);">
+    	<div id="div2" onclick="cl(this);">
+		</div>
+	</div>
+
+-->
+
+	Начало сайта
+	<script>
+    	for(var i = 0; i < 1; i++){
+           document.write('<br>');
+    	}
+
+ 		var d = new Date();
+    	document.write(d.toLocaleString() + "       "+  d.toGMTString());
+
+	</script>
+
+	<a href="#" onclick="wasd(this); return false;">Ссылка</a>      <!-- посмотрть event.return...  return flse что бы не выполнять обработик для href-->
+
+	<br>
+	<a id="ssilka" href="#"  onclick="disp(primer1); return false;" onmous> Отобразить </a>
+
+	<pre  id="primer1" style="display: none">
+    	Помогите разобраться с примером...
+		Что значат 'event.returnValue=0;event.cancelBubble = true;' ?
+		Самое интересное - работает и без него, тогда что это и для чего нужно?
+		Пытался перевести... но при чем тут bubble?
+		Есть ли где описание этих прибамбасов на русском языке? И вообще к чему они относятся?
+	</pre>
+
+
+	<span id="men" onmousedown="funcDown(this);" onmouseup="funcUp(this);" onmouseout="funcOut(this);" onmouseover="funcOver(this);" > Span </span>
+
+
+	<script>
+    	men.onclick = cll;
+        function cll() {
+        	event.srcElement.innerText = "Да";
+        }
+	</script>
+
+
+
+
+	<div id="block" style="width: 100px; height: 100px; position: absolute; background-color: #0C13CC" onmousedown="funcOnDown(this);" onmouseup="funcOnUp();"> Блок </div>
+
+
+
+	<script>
+    	var isMouseDown = null;
+		var offX;
+		var offY;
+
+
+		if (!isMouseDown)
+			isMouseDown = elem;
+
+
+	</script>
+
+</body>
+
+
+</html>

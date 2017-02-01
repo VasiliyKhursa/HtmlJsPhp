@@ -1,0 +1,73 @@
+﻿<html>
+  <head>
+    <style>
+      td {background-color:whitesmoke; border:1px solid blue;}
+    </style>
+  </head>
+  <body>
+  <form name="form1">
+  	<select name="select1" onchange="chg();">
+    	<option>Сортироать по</option>
+		<option>Товару</option>
+		<option>Цене</option>
+	</select>
+
+  </form>
+   <table>
+      <tbody>
+      <tr><td style="background-color:silver;font-weight:bold;text-align:center;cursor:pointer;">ТОВАР</td>
+	  		<td style="background-color:silver;font-weight:bold;text-align:center;">ССЫЛКА</td>
+	  		<td style="background-color:silver;font-weight:bold;text-align:center;cursor:pointer;" >Цена</td>
+	 </tr>
+
+      </tbody>
+      <tbody id="price">
+	  		<tr><td>Компьютеры</td><td><img src="pk.jpg"></td><td>8000</td></tr>
+      		<tr><td>Принтеры</td><td><img src="pr.jpg"></td><td>5000</td></tr>
+      		<tr><td>Аудио-видео</td><td><img src="vi.jpg"></td><td>1000</td></tr>
+      </tbody>
+    </table>
+<script>
+function sortTable(num) {
+  var r_tbody=document.getElementById('price'); // получаем tbody price
+  var ar_tr=r_tbody.getElementsByTagName('tr');  // массив всех его tr-узлов
+  var ar_tr_dom=new Array(); // пустой массив для DOM-СОДЕРЖИМОГО всех tr-узлов
+
+  for(var i=0; i<ar_tr.length; i++) { // перебор массива tr и ЗАПОЛНЕНИЕ пустого массива-DOM-СОДЕРЖИМОГО
+        ar_tr_dom[i]=ar_tr[i];
+  }
+
+function sortTr (tr1, tr2) {  // ФУНКЦИЯ СОРТИРОВКИ
+         if (tr1.childNodes[num].innerHTML > tr2.childNodes[num].innerHTML)
+                  return 1; // ПОМЕНЯЕМ ЗНАК – ОБРАТНАЯ СОРТИРОВКА
+         else if(tr1.childNodes[num].innerHTML == tr2.childNodes[num].innerHTML)
+                  return 0;
+         else return -1;
+}
+  ar_tr_dom.sort(sortTr); // СОРТИРОВКА массива
+
+
+  for (var i=0; i<ar_tr_dom.length;i++ ){
+       r_tbody.removeChild(ar_tr_dom[i]);
+  }
+
+
+  for(var i=0; i<ar_tr_dom.length; i++) {  // ДОБАВЛЯЕМ ОТСОРТИРОВАННЫЕ УЗЛЫ tr В ТАБЛИЦУ
+        r_tbody.appendChild(ar_tr_dom[i]);
+  }
+
+
+
+}
+
+  function chg() {
+  	if (form1.select1.selectedIndex == 1)
+    	sortTable(0);
+   	if (form1.select1.selectedIndex == 2)
+    	sortTable(2);
+  }
+
+</script>
+
+</body>
+</html>

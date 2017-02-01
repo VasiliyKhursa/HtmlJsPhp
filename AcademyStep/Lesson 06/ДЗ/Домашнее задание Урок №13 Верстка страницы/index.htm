@@ -1,0 +1,287 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+  <link rel="stylesheet"; type="text/css"; href="css/style.css">
+</head>
+
+<body style="text-align: justify">
+    <div id="container">
+
+        <div id="form">
+
+             <form id="row" name="form" metod="get" action="html/program.html" style="margin: 0px">  <!-- для формы margin:0px; - убрать  «лишний» перенос строки -->
+
+                <div style="display: table-row " >
+
+                    <div class="form_text_cell">
+                         Login
+                    </div>
+
+                    <div class="form_editBox_cell">
+                        <input id="formtext" type="text" name="login" class="editBox" value=" " maxlength="20">
+                    </div>
+                </div>
+
+                <div  style="display: table-row"  >
+
+                    <div class="form_text_cell">
+                         Password
+                    </div>
+
+                    <div class="form_editBox_cell">
+                        <input id="formtext" type="password" name="password" class="editBox" value="" size="20" maxlength="20">
+                    </div>
+                </div>
+
+                <div  style="display: table-row" >
+
+                    <div class="form_text_cell">
+
+                    </div>
+
+                    <div class="form_text_cell" id="error" style="text-align: center; visibility: hidden;">
+                        <span style="color: Maroon; font-weight: normal; font-size: 14px "> Enter your login and password </span>
+                    </div>
+                </div>
+
+                <div  style="display: table-row" >
+
+                    <div class="form_text_cell">
+
+                    </div>
+
+                    <div class="form_text_cell">
+                        <input id="btnLogin" type="button" value="Login" class="btn" onclick="document.getElementById('error').style.visibility = 'visible' ">
+                    </div>
+
+                </div>
+
+                <div  style="display: table-row" >
+
+                    <div class="form_text_cell">
+
+                    </div>
+
+                    <div class="form_text_cell">
+                        <a href="#" onclick="document.getElementById('profile').style.visibility = 'visible' "> Registration </a>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div id="profile"  >                            <!--style="visibility: hidden"-->
+            <form id="row" name="form" metod="get" action="html/program.html" style="margin: 0px">  <!--- метод гет и пост, action="html"--->
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Login
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext" type="text" name="password" value="" maxlength="20" class="editBox">
+                            (а-я, a-z, 0-9, _)
+                        </div>
+                </div>
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Password
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext" type="password" name="password" value=""  maxlength="20" class="editBox">
+                            (а-я, a-z, 0-9, _)
+                        </div>
+                </div>
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Repeat password
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext" type="password" name="password" value=""  maxlength="20" class="editBox">
+                        </div>
+                </div>
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Name
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext" type="text" name="password" value="" maxlength="20" class="editBox">
+                        </div>
+                </div>
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Birthday
+                        </div>
+
+                        <div style="display: table-cell; vertical-align: middle">
+                            <select name="sel" size="1" class="select">
+                                <option value="e0"> 1990 </option>
+                                <option value="e1"> 1991 </option>
+                                <option valeu="e2"> 1992 </option>
+                                <option valeu="e3"> 1993 </option>
+                                <option valeu="e4"> 1994 </option>
+                                <option valeu="e5"> 1995 </option>
+                                <option valeu="e6"> 1996 </option>
+                            </select>
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Location
+                        </div>
+
+                        <div style="display: table-cell; vertical-align: middle">
+                            <select name="sel" size="1" class="select">
+                                <option value="c0"> Ukraine </option>
+                                <option value="c1"> Poland </option>
+                                <option valeu="c2"> Germany </option>
+                                <option valeu="c3"> Italy </option>
+                                <option valeu="c4"> France </option>
+                                <option valeu="c5"> Slovenia </option>
+                                <option valeu="c6"> Hungary </option>
+                            </select>
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Marital status
+                        </div>
+
+                        <div style="display: table-cell; vertical-align: middle">
+                            <select name="sel" size="1" class="select">
+                                <option value="m0"> Married </option>
+                                <option value="m1"> Not married </option>
+                            </select>
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                            Education
+                        </div>
+
+                        <div style="display: table-cell; vertical-align: middle">
+                            <select name="sel" size="1" class="select">
+                                <option value="ed0"> Secondary </option>
+                                <option value="ed1"> Specialized secondary </option>
+                                <option value="ed2"> Higher </option>
+                                <option value="ed1"> Master </option>
+                            </select>
+                        </div>
+                </div>
+
+
+                 <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                            Experience
+                        </div>
+
+                        <div style="display: table-cell; vertical-align: middle">
+                            <select name="sel" size="1" class="select">
+                                <option value="ex0"> &#60; 1 year </option>
+                                <option value="ex1"> 2 &#60; years &#60; 3 </option>
+                                <option value="ex2"> &#62; 5 years </option>
+                                <option value="ex3"> Absent </option>
+                            </select>
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             Telephone number
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext" type="text" name="password" value="" maxlength="20" class="editBox">
+                            (+380XX XXX XX XX)
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                             E-mail
+                        </div>
+
+                        <div class="profile_editBox_cell">
+                            <input id="formtext_email" type="text" name="password" value="" maxlength="20" class="editBox" style="width: 300px">
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                            Your photo <br>
+                            (jpg, png, gif)
+                        </div>
+
+                         <div class="profile_text_cell">
+                            Additional information
+                        </div>
+                </div>
+
+
+                <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+                            <img src="image/buckethead.jpg" style="height: 160px">
+                        </div>
+
+                         <div class="profile_text_cell">
+                            <textarea name="more_info" rows="10" cols="50" class="textarea"> </textarea>
+                        </div>
+                </div>
+
+
+                 <div  style="display: table-row"  >
+
+                        <div class="profile_text_cell">
+
+                        </div>
+
+                         <div class="profile_text_cell">
+                            <input id="btnSave" type="button" value="Save profile" class="btn" >
+                        </div>
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+	</div>
+
+
+</body>
+
+</html>

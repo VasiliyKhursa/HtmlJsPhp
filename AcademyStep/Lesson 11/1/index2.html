@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+</head>
+
+<body id="bod">
+
+	<a id="ssilka" href="#" onclick="insert2(); return false;">ссылка</a>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a id="ssilka2" href="#" onclick="insert3(); return false;">ссылка2</a>
+	<br>
+	<br>
+	<br>
+	<a id="ssilka3" href="#" onclick="insert6(); return false;">ссылка3</a>
+
+	<script>
+    	function deti(){
+			var ra=document.getElementById('ssilka');
+            for(var i=0; i<ra.childNodes.length; i++){
+            	alert(ra.childNodes[i].nodeName + '  ' + ra.childNodes[i].textContent);
+			}
+    	}
+	</script>
+
+	<script>
+    function insert1(){
+    	var rbod=document.getElementById('bod');
+		var ra=document.getElementById('ssilka');
+
+		var el_new = document.createElement('span');
+		el_new.innerHTML = "new text<br>";
+		el_new.setAttribute('id', 'spp1');
+        el_new.setAttribute('style', 'color:red');
+		rbod.insertBefore(el_new, ra);
+	 }
+	</script>
+
+
+	<script>
+    function insert2(){
+    	var rbod=document.getElementById('bod');
+		var ra=document.getElementById('ssilka');
+
+		var el_new = document.createElement('span');
+		el_new.innerHTML = "<br>new text";
+		el_new.setAttribute('id', 'spp1');
+        el_new.setAttribute('style', 'color:red');
+		rbod.insertBefore(el_new, ra.nextSibling);
+	 }
+	</script>
+
+	<script>
+	// ставит после текста ссылки
+    function insert3(){
+		var ra=document.getElementById('ssilka2');
+
+		var el_new = document.createElement('img');
+		var br_new = document.createElement('br');
+		el_new.setAttribute('id', 'img1');
+		el_new.setAttribute('src', 'sharik.png');
+        el_new.setAttribute('style', 'width:100px');
+        el_new.setAttribute('style', 'height:100px');
+		ra.appendChild(br_new);
+		ra.appendChild(el_new);
+	 }
+	</script>
+
+	<script>
+	// ставит перед перед текстом ссылки
+    function insert4(){
+		var ra=document.getElementById('ssilka2');
+
+		var el_new = document.createElement('img');
+		el_new.setAttribute('src', 'sharik.png');
+        el_new.setAttribute('style', 'width:50px');
+        el_new.setAttribute('style', 'height:50px');
+		ra.insertBefore(el_new,ra.firstChild);
+	 }
+	</script>
+
+ 	<script>
+	// меняем текст
+    function insert5(){
+		var ra=document.getElementById('spp1');
+       ra.innerHTML = "<br>azaza";
+	 }
+	</script>
+
+	<script>
+	// удаляем
+    function insert6(){
+		var ra=document.getElementById('img1');
+		var rparent=document.getElementById('ssilka2');
+		ssilka2.removeChild(img1);
+	 }
+	</script>
+
+</body>
+
+</html>

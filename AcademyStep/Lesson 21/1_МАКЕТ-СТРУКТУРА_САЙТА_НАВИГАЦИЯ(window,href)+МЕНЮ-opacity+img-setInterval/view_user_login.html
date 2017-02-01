@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+<style>
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<div id="header_container">
+<div id="header_container_logo">
+<img src="images/logo.png" alt="Логотип" />
+</div>
+</div>
+</div>
+
+<div id="menu">
+<div id="menu_container">
+<div style="display:table; margin:0px auto;">
+<div style="display:table-raw;">
+<div style="display:table-cell; width:300px; border-right:2px solid white">
+<img src="images/menu_first.png" name="menu_first" alt="Главная" style="cursor:pointer;" onclick="window.close();" />
+</div>
+<div style="display:table-cell; width:300px; border-right:2px solid white">
+<img src="images/menu_demo.png" name="menu_demo" alt="Демо-версия" style="cursor:pointer;"  onclick="location.href='view_demo.html?name_opac=menu_demo';" />
+</div>
+<div style="display:table-cell; width:300px;">
+<img src="images/menu_login.png" name="menu_login" alt="Авторизованные пользователи" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="user_login">
+<div id="user_form_div">
+<div style="display:table;">
+<form name="user_form" style="margin:0px;">
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+E-Mail:&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<input type="text" name="user_form_email" class="form_text" maxlength="100">
+</div>
+</div>
+<br>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+Пароль:&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<input type="password" name="user_form_pass" class="form_text"  maxlength="100">
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<span  id="user_form_error" style="color:red; display:none;">Ошибка "E-Mail" или "Пароль"!</span>
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<input type="button" name="user_form_button" value="Ok" class="form_button">
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+&nbsp;
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<a href="#" class="form_link">Или зарегистрироваться...</a>
+</div>
+</div>
+<div id="user_form_reg_ok" style="display:none;">
+<hr>
+<div style="display:table-row;">
+<hr>
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<span  id="user_form_email_reg_ok" style="color:green;">На E-Mail отправлен пароль</span>
+</div>
+</div>
+</div>
+<div id="user_form_reg_div" style="display:none;">
+<hr>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+<span style="color:#9e065c;">Ведите E-mail:</span>&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<input type="text" name="user_form_email_reg" class="form_text" style="color:#9e065c;" maxlength="100">
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<span  id="user_form_email_reg_error" style="color:red; display:none;">Некорректный "E-Mail"!</span>
+</div>
+</div>
+<div style="display:table-row;">
+<div style="display:table-cell; width:150px;">
+&nbsp;
+</div>
+<div style="display:table-cell; width:250px;">
+<input type="button" name="user_form_button_reg" value="Go" style="color:#9e065c;" class="form_button">
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div style="clear:both;"></div>
+
+<!-- <script type="text/javascript" src="scripts.js"></script> -->
+</body>
+</html>

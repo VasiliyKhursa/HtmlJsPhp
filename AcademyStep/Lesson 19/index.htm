@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+
+	<script>
+
+	var  txt = "Регулярные выражния";
+
+	document.write(txt.replace(/р/, "_") +"<br>");         // заменяет первый
+	document.write(txt.replace(/р/g, "_") +"<br>");        // замеяет все учитывая реггистр
+	document.write(txt.replace(/р/gi, "_") +"<br>");		// замняет все, не учитыва регистр
+	</script>
+</head>
+
+<body>
+	<form name="form1" action="http://">
+		<input name="inp" type="text">
+		<br>
+		<input name="button" type="button" value="OK" onclick="go3(inp.value);">
+	</form>
+
+
+	<div id="div1">
+    	Это, в первую очередь, объясняется принципами их работы. Здесь можно упомянуть и крос- сплатформенность, и преимущества интернета, как средства доступа к веб приложению из любой точки мира, и небольшие затраты на разворачивание инфраструктуры, и мириады интернет пользователей, готовых потреблять услуги веб-приложений и обогащать их создателей.
+	</div>
+
+	<script>
+    console.log(form1.inp.value);
+    //console.log(inp.value);
+	function go(txt) {
+		var r = /\W/; 			// поиск спец символа
+		if (txt.search(r) == -1) {
+			console.log('yes');
+		}
+		else {
+           console.log('no');
+		}
+	}
+
+
+	function go2(txt) {
+		var r = /^(\(0\d{2}\))?\d{3}((-| |)\d{2}){2}$/;
+		if (r.test(txt)) {
+			console.log('yes');
+		}
+		else {
+           console.log('no');
+		}
+	}
+
+	</script>
+
+	<script>
+    var tx="Alex Alexandr alexey alex";
+	var r = /\balex\b/gi ;
+	document.write(tx.replace(r, "<b>Sasha</b>"));    //   \b \b - выделет целое слово
+
+	var tx2="<br>2015 2016 1812";
+	var r2 = /(\d{4})/g;
+	document.write(tx2.replace(r2, "$1 <b>год </b>"));    //   \b \b - выделет целое слово
+
+	var tx3="<br>Sorg 1 Mart 22 alex 671";
+	var r3 = /\d+/g;
+	var arr = tx3.match(r3);  						// разделяем по сравнению
+
+	for (var i = 0; i < arr.length; i++){
+    	document.write('<br>' + arr[i]);    //   \b \b - выделет целое слово
+	}
+
+ 	var tx4="Hello, mr.Sorg";
+	var r4 = /\W+/g;
+	var arr4 = tx4.split(r4);  				/// разделяемпо разделителю
+
+	for (var i = 0; i < arr4.length; i++){
+    	document.write('<br>' + arr4[i]);    //   \b \b - выделет целое слово
+	}
+
+	var r5 = /[^а-яэіїє\w]+/gi;
+	var tx5="привет, мр.Sorg";
+
+    var arr5 = tx5.split(r5);  				/// разделяемпо разделителю
+
+	for (var i = 0; i < arr5.length; i++){
+    	document.write('<br>' + arr5[i]);    //   \b \b - выделет целое слово
+	}
+
+
+	function go3(txt) {
+	    var rBody  = "(" + txt + ")";
+		var rKey = "gi";
+		var r6 = new RegExp (rBody, rKey);
+
+	   //	var txt = div1
+		div1.innerHTML = div1.innerHTML.replace(r6, "<a href='#' style='background-color:gold'>$1<\a>");
+
+	}
+
+
+	</script>
+
+</body>
+
+</html>

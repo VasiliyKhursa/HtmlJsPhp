@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Шарик вокруг круга</title>
+        <style>
+        #elemTo1 {position: absolute; left: 100; top: 100; z-index:1; width:200px; height:200px;}
+        </style>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+		<script>
+        $(document).ready(function() {
+        	$('#ssilka').click(function(){
+                $('#sp1').fadeOut(2000);
+        		})
+			});
+		</script>
+
+    </head>
+    <body style="margin:0px;">
+    <span id="sp1">Я исчезающй текст</span>
+	<a href="#" id="ssilka">ssilka</a>
+
+
+    <div id="osnova" style="position:relative;">
+    <div id="elemTo1">
+    <img src="krug1.png" style="width:200px; height:200px;" onmouseover="inter = setInterval('moveElem()', delay);" onmouseout="clearInterval(inter);">
+    </div>
+    <div id="elemToMove" style="position: absolute; left: 310; top: 192;">
+    <img src="sharik.png" style="width:20px; height:20px;">
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        var R = 120,
+            a = 0,
+            da = 3*Math.PI/180,
+            delay = 30;
+
+			var inter;
+        function moveElem() {
+            elemToMove.style.left = 190+R*Math.cos(a)+"px";
+            elemToMove.style.top  = 192+R*Math.sin(a)+"px";
+            a+=da;
+        }
+
+		//setInterval('moveElem()', delay);
+    </script>
+
+
+
+
+    <span id="sp2">Я исчезающй текст 2</span>
+	<a href="#" id="ssilka2" onclick="sI2 = setInterval('func()',100);">ssilka2</a>
+
+
+    <script>
+    	var int;
+    	var j=1.0;
+
+		function func() {
+			var sp2  = document.getElementById("sp2");
+
+			if(j<0.3) {
+                //sp2.setAttribute('style','display:none;');
+                clearInterval(sI2);
+            }
+
+			sp2.setAttribute('style','opacity:' + j);
+			j -=0.05;
+
+		}
+
+	</script>
+
+    </body>
+</html>

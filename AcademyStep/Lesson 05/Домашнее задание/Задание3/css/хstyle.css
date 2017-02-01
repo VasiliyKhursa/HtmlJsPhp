@@ -1,0 +1,50 @@
+﻿body{
+	background: #0E1ECC;
+}
+
+#container{
+	width: 1024px;
+	background-color: #FFF941;
+	margin: 0px auto;
+}
+
+#logo{
+    width: 324px;
+	height: 150px;
+	background-color: #1ECC2A;
+	float: left;
+}
+
+#find{
+    width: 700px;
+	height: 150px;
+	background-color: #CC3DB0;
+	float: right;
+}
+
+
+#menu{
+    width: 124px;
+	background-color: #79FFF7;
+	float: left;
+/*	display: table;	 */	/*указываем то, что этот блок таблица*/
+}
+
+#content{
+	width: 600px;
+	background-color:#FFFFFF;
+	float: left;
+}
+
+#links{
+	width: 300px;
+	background-color: #FF3300;
+	float: right;
+}
+
+#copyrights{
+    width: 1024px;
+	height: 30px;
+	background-color: #00CCFF;
+	float: left;
+}

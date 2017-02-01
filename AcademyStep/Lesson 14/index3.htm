@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+</head>
+
+<body>
+<form name="Form1" method="get">
+	<input name="text1" value="azaza" onfocus="fc(this); return false;" onkeyup="kp(this); return false;"  onblur="ob(this); return false;">
+	<button name="button">Кнопка</button>
+
+</form>
+
+<form name="Form2">
+	<input type="checkbox" name="variant1" value="Вариант1" onclick="click(this);"/> Вариант1
+	<br>
+    <input type="checkbox" name="variant" value="Вариант1" onclick="click(this);"/> Вариант2
+    <br>
+	<input type="checkbox" name="variant" value="Вариант1" onclick="click(this);"/> Вариант3
+	<br>
+	<button type="button" name="button" value="But">Кнопка</button>
+
+</form>
+
+<form name="Form3">
+    <input type="radio" name="radio1" value="radio1" onclick="clr(this);"/>rad1
+    <br>
+    <input type="radio" name="radio2" value="radio2" onclick="clr(this);"/>rad2
+    <br>
+    <input type="radio" name="radio3" value="radio3" onclick="clr(this);"/>rad3
+    <br>
+</form>
+
+<form name="Form4">
+	<select name="sel" onchange="oc();">
+		<option selected="selected1"><link href="http://google.com"/> google1 </option>
+		<option selected="selected2"><link href="http://google.com"/> google2 </option>
+		<option selected="selected3"><link href="http://google.com"/> google3 </option>
+	</select>
+</form>
+
+<script>
+	function ob(elem){
+    	elem.style.border = "1px solid black";
+		elem.style.color = "black";
+	}
+
+	function kp(elem){
+        var simvol = elem.value.substr(elem.value.length - 1);
+		if (simvol == "'") {
+			var val = elem.value.substring(0, elem.value.length - 1);
+			elem.value = val;
+		}
+
+	}
+
+	function fc(elem){
+		elem.style.border = "3px solid green";
+		elem.style.color = "blue";
+
+	}
+
+	function cl(){
+    	document.forms[0].text1.value = "нажал";
+		//document.forms[0].elements["text1"].value = "нажал2";
+
+	}
+
+ /*
+	function click(elem){
+	   //elem.disabled = "true";
+	   var vibor = '';
+	   for  (var i=0; i<Form2.length; i++) {
+          if (Form2.elements[i].type == "checkbox" && Form2.elements[i].checked)
+		  	vibor += vibor + Form2.elements[i];
+	   }
+
+	}
+*/
+/*
+	function clr(elem){
+		for (var i = 0; i < Form3.length; i++) {
+			if(Form3.elements)
+		}
+		//Form3.elements[]
+	}
+*/
+	function clr(elem) {
+
+	}
+	function oc() {
+		Form4.select1.options[1].selected = "true";
+	}
+</script>
+
+</body>
+
+</html>

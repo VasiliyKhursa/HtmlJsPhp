@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+
+<div style="background-color: #30CC0C; width: 100px; height: 100px;"></div>
+
+<div style="background-color: #1C39CC; width: 200px; height: 200px;"></div>
+
+<div style="background-color: #CC1C10; width: 300px; height: 300px;"></div>
+
+<a href="#" onclick="obratno()">link</a>
+
+<script>
+
+	function obratno() {
+  		var rdiv = document.body.getElementsByTagName("div");
+		var rst = new Array();
+
+		for (var i=0; i<rdiv.length; i++){
+			rst[i] = rdiv[i].getAttribute("style");
+		}
+		rst.reverse();
+
+		for (var i=0; i<rst.length; i++){
+			rdiv[i].setAttribute('style',rst[i]);
+		}
+
+
+	}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+﻿body{
+	background: #8CCC85;
+}
+
+
+#container{
+	width: 1024px;
+	background-color: #B6FFEB;
+	margin: 0px auto
+}
+
+#logo{
+	width: 1024px;
+	height: 100px;
+	background-color: #34CC26;
+}
+
+#menu{
+	width: 500px;
+	height: 50px;
+	background-color: #3C60CC;
+	float: left;
+
+}
+
+#find{
+	width: 500px;
+	height: 50px;
+	background-color: #CC1CC1;
+	float: right;
+}
+
+#content{
+	width: 700px;
+	height: 200px;
+	background-color: #CC0B18;
+	float: left;
+}
+
+#ssilki{
+	width: 300px;
+	height: 200px;
+	background-color: #994137;
+	float: right;
+}
+
+#foter{
+	width: 1024px;
+	height: 50px;
+	background-color: #000000;
+	float: left;
+}

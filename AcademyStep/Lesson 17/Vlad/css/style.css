@@ -1,0 +1,13 @@
+td{
+  background-color: #87BABA;
+}
+
+#shap{
+  background-color: red;
+  text-align: center;
+  color: green;
+}
+#tovar{
+  display: none;
+  cursor: pointer;
+}

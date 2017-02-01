@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Lesson 20</title>
+	<script>
+
+	var val= "Sorg;Odessa";
+
+	var dat =  new Date();
+
+	dat.setMonth(dat.getMonth() + 3);
+
+	document.cookie = "UserInfo=" + escape(val) + ";"  + ";expires=" + dat.toUTCString() + ";";
+	document.cookie = "userName=Vasya";
+	document.cookie = "UserName=Alex; expires=Fri, 1 Jan 2017 00:00:00;";
+
+	function setCookei (name, val, exp){
+		var cook = name + "=" + escape(val) + ";";
+
+		if (exp != 0) {
+			var dt = new Date();
+            dt.setMonth(dt.getMonth() + exp);
+        	cook +=  "expires=" + dt.toUTCString() + ";"  ;
+		}
+
+		document.cookie = cook;
+	}
+
+	function getCookieVal (name) {
+    	var cookieVal = document.cookie;
+
+		var cookieStart = cookieVal.indexOf(name);
+
+
+        var retVal;
+
+		if (cookieStart == -1) {
+
+            retVal = null;
+
+		}
+		else {
+           cookieStart = cookieVal.indexOf("=", cookieStart)  + 1;
+		   var cookieEnd;
+
+           if (cookieVal.indexOf(";", cookieStart + 1) == -1) {
+               cookieEnd = cookieVal.length;
+           }
+		   else {
+              cookieEnd = cookieVal.indexOf(";", cookieStart + 1);
+		   }
+		   retVal =  unescape(cookieVal.substring(cookieStart, cookieEnd ));
+		   console.log(retVal);
+		}
+		return retVal;
+	}
+
+
+
+
+	</script>
+</head>
+
+<body>
+	<div id="FRM" style="display: none">
+		<form name="form1">
+	    	<input type="text" name="Login" value="Login">
+			<input type="text" name="Mail" value="mail@gmail.com">
+			<input type="button" value="Кнопка" onclick="go()">
+		</form>
+ 	</div>
+
+	<div id="INF" style="display: none">
+	</div>
+
+
+	<script>
+
+    function go() {
+    	var dt = new Date();
+
+		setCookei("Login",form1.Login.value, 6);
+		setCookei("Mail", form1.Mail.value, 6);
+		setCookei("Date",  dt.toLocaleDateString(), 6);
+	}
+
+
+	console.log(document.cookie);
+	getCookieVal("Date");
+
+// удаляем куки
+    setCookei("UserInfo","", -1);
+	setCookei("userName","", -1);
+	setCookei("UserName","", -1);
+
+
+//	setCookei("Login","", -1);
+//	setCookei("Mail","", -1);
+//	setCookei("Date","", -1);
+
+
+
+	</script>
+
+	<script>
+
+    if (getCookieVal("Login") == null) {
+        FRM.style.display = "block";
+    }
+	else {
+		INF.style.display = "block";
+		document.write("Привет " + getCookieVal('Login') + ". Дата последннего визита : " + getCookieVal('Date'));
+
+        var dt = new Date();
+        setCookei("Date",  dt.toLocaleDateString(), 6);
+	}
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+
+  <style>
+	.class1{
+	width: 100px;
+	height: 10px;
+	background-color: #35FF1A;
+	}
+
+	.class2{
+	width: 10px;
+	height: 10px;
+//	background-color: #35FF1A;
+	}
+
+  </style>
+</head>
+
+<body>
+
+<table>
+	<tbody>
+		<tr class="class1";>
+			<td>11</td><td>12</td><td>13</td><td>14</td>
+		</tr>
+		<tr class="class1";>
+			<td>21</td><td>22</td><td>23</td><td>24</td>
+		</tr>
+		<tr class="class1";>
+			<td>31</td><td>32</td><td>33</td><td>34</td>
+		</tr>
+		<tr class="class1";>
+			<td>41</td><td>42</td><td>43</td><td>44</td>
+		</tr>
+	</tbody>
+</table>
+
+
+	<script>
+	var rtable = document.body.getElementsByTagName("tr");
+	for (var i=0; i< rtable.length; i++){
+     	rrow = rtable[i].getElementsByTagName("td");
+		rrow[i].setAttribute("style" , "background-color: red");
+	}
+	</script>
+
+
+
+</body>
+
+</html>

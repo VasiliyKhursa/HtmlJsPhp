@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="script.js"></script>
+<style>
+ #div0 {background-color:silver; width:1024px; text-align:justify;}
+</style>
+</head>
+<body>
+<form name="form1">
+<input type="text" name="tex" size="40">
+<input type="button" value="искать сайт" onclick="div0.innerHTML=content; iskat(tex.value); win_op(tex.value);">
+</form>
+<br>
+<div id="div0">Это, в первую очередь, объясняется принципами их работы. Здесь можно упомянуть и крос- сплатформенность, и преимущества интернета, как средства доступа к веб приложению из любой точки мира, и небольшие затраты на разворачивание инфраструктуры, и мириады интернет пользователей, готовых потреблять услуги веб-приложений и обогащать их создателей.</div>
+
+<br><a href="#" id="ssilka" style="display:none;" onclick="next_page(); return false;">Next...</a>
+
+<script type="text/javascript">
+     var content=div0.innerHTML;
+     var win;
+     function win_op(textt) {
+        win=window.open('page.html?poisk='+textt);
+     }
+</script>
+</body>
+</html>

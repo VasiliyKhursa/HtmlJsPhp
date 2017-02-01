@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title> Page16 </title>
+	<script type="text/javascript" src="script.js"></script>
+
+	<SCRIPT LANGUAGE="javascript">  							// начало скрипта
+	var get = decodeURIComponent(location.search.substr(1)); 	// получение параметра по методу get
+	newSet = ""; 												// сюда присваиваем данные
+	var poisk = "poisk="; 								   		// входящее слово поиск
+	var parametr = "";											// входящий параметр слова, которое нужно найти
+
+	for (var i = 0; i <= get.length; i++) {  					// преобразование параметра к читаемому виду
+	      switch(get.charAt(i)) {
+	        case "+":
+	          newSet += " ";
+	          break;
+	        case "&":
+	          newSet += " и ";
+	          break;
+	        default:
+	          newSet += get.charAt(i);
+	      }
+	}
+	//document.write("Вы ввели(выбрали) : " + newSet + ".");  //отображение параметра
+	</SCRIPT>
+</head>
+
+<body>
+
+<div id="tex">В любом языке есть слова, которые встречаются намного чаще других. Слова, которые встречаются слишком часто, чтобы быть значимыми для поиска, называются стоп-словами. Как правило, это местоимения, предлоги и частицы. Поисковые машины обычно игнорируют стоп-слова, даже если они встречаются в тексте запроса.</div>
+
+<script>
+
+	var content = tex.innerHTML;								// сохраняем контент в глобальную переменную когда страница загрузилась - добавить потом условие
+
+	if (newSet.indexOf(poisk) != -1) { 							// если мы нашли начальное слово
+        console.log(newSet.indexOf(poisk)); 					// выводим позицию где нашли
+
+        parametr = newSet.substring(poisk.length);				// находим переданный параметр, копирую подстроку, которая идет после слова "poisk="
+        console.log(parametr);
+
+		go(parametr);
+	}
+
+</script>
+</body>
+
+</html>

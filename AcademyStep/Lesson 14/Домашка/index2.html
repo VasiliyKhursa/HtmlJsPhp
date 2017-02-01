@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Home14</title>
+</head>
+
+<body>
+
+	<form name="Forma1" action="">
+		<input name="check1" type="checkbox" value="1" onclick="oc(this);"/> Вариант1 <br>
+        <input name="check2" type="checkbox" value="2" onclick="oc(this);"/> Вариант2 <br>
+		<input name="check3" type="checkbox" value="3" onclick="oc(this);"/> Вариант3 <br>
+		<input name="check4" type="checkbox" value="4" onclick="oc(this);"/> Вариант4 <br>
+		<input name="check5" type="checkbox" value="5" onclick="oc(this);"/> Вариант5
+	</form>
+
+	<script>
+    	var checkArray = document.getElementsByTagName('input');
+		var count = 0;
+        console.log(checkArray);
+
+		for (var i = 0; i < checkArray.length; i++){
+			if (checkArray[i].type == "checkbox") {
+            	checkArray[i].checked = false;
+			}
+		}
+
+
+ 		function oc(elem) {
+			if (elem.checked == true) {
+                count++;
+			}
+			else {
+				count--;
+			}
+
+			if (count >= 3) {
+				for (var i = 0; i < checkArray.length; i++) {
+					if (checkArray[i].type == "checkbox" && checkArray[i].checked == false) {
+            			checkArray[i].disabled = true;
+					}
+				}
+			}
+			else {
+				for (var i = 0; i < checkArray.length; i++) {
+					if (checkArray[i].type == "checkbox" && checkArray[i].disabled == true) {
+            			checkArray[i].disabled = false;
+					}
+				}
+			}
+ 		}
+	</script>
+</body>
+
+</html>

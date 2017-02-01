@@ -1,0 +1,232 @@
+﻿body, #formtext {
+	background-color:white;
+    color:indigo;
+    font-size:10pt;
+    font-family:arial;
+}
+
+
+#container{
+	width: 1024px;
+	background-color: #B6FFEB;
+	margin: 0px auto;
+}
+
+#form{
+	width: 250px;
+	height: 150px;
+	background-color: #34CC26;
+    float: left;
+    border: 1px solid silver;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: table;
+    padding: 15px;
+    background-image: linear-gradient(to bottom right, #5CC3FF, #0060BF);
+}
+
+
+#profile{
+    width: 774px;
+	background-color: #5860CC;
+    float: right;
+    border: 1px solid silver;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: table;
+    padding: 15px;
+    background-image: linear-gradient(to bottom right, #BAC4FF, #8266FF);
+}
+
+.editBox {
+    width: 140px;
+    height: 20px;
+    border:1px solid silver;
+    border-radius: 7px;
+    color:indigo;
+    font-size:10pt;
+    font-family:arial;
+}
+
+.btn {
+    border:1px solid silver;
+    border-radius:2px;
+    color:indigo;
+    font-size:10pt;
+    font-family:arial;
+    cursor:pointer;
+}
+
+.select {
+    height: 20px;
+    border:1px solid silver;
+    border-radius: 4px;
+    color:indigo;
+    font-size:10pt;
+    font-family:arial;
+}
+
+.textarea {
+    border:1px solid silver;
+    border-radius: 4px;
+    color:indigo;
+    font-size:10pt;
+    font-family:arial;
+}
+
+
+.form_text_cell {
+    display: table-cell;
+    width: 70px;
+    height: 30px;
+  /*  border: 1px solid black;  */
+    vertical-align: middle;
+}
+
+.form_editBox_cell {
+    display: table-cell;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.profile_text_cell {
+    display: table-cell;
+    width: 150px;
+    height: 40px;
+  /*  border: 1px solid black;  */
+    vertical-align: middle;
+}
+
+.profile_editBox_cell {
+    display: table-cell;
+    height: 40px;
+    width: 300px;
+    vertical-align: middle;
+}
+
+
+
+#find{
+	width: 324px;
+	height: 200px;
+	background-color: #CC1CC1;
+	float: right;
+    display: table;
+}
+
+#content{
+	width: 700px;
+	height: 1000px;
+	background-color: #FFFFFF;
+	float: left;
+    border: 2px;
+    padding: 5px;
+    box-sizing: border-box; /* не учитывает в рассчетах */
+}
+
+#ssilki{
+	width: 324px;
+/*	height: 200px;      */
+	background-color: #994137;
+	float: right;
+    display: table;
+}
+
+#foter{
+	width: 1024px;
+	height: 50px;
+	background-color: #BA5241;
+	float: left;
+    display: table;
+}
+
+.cell{
+/*    display: table-cell;*/
+    vertical-align: middle;
+    position: absolute;
+    top: 10px;      /*относительно блока menu*/
+    left: 10px;     /*относительно блока menu*/
+}
+
+.cell_f{
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.ssilka1{
+    display: table-row;
+}
+
+.ssilka2{
+    display: table-row;
+}
+
+.ssilka3{
+    display: table-row;
+}
+
+.ssilka1_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ssilka2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ssilka3_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.find1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+input, select, textarea {
+   border-radius: 4px;
+   text-align: justify;
+
+}
+
+#submit1, #submit2, #submit3{
+    cursor: pointer;
+}
+
+#div0{
+    position: relative;
+}
+
+#div1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+#div2{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+#div3{
+    margin-top: 300px;
+}
+
+#btn1{
+    position: absolute;
+    margin-top: 270px;
+}
+
+#btn2{
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 60px;
+}

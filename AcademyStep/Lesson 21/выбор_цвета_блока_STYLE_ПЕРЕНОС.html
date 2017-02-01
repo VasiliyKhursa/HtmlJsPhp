@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Untitled</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style id="st">
+#div1 {
+position:absolute;
+width:50px;
+height:50px;
+background-color:red;
+top:0px;
+left:0px;
+}
+#div2 {
+position:absolute;
+width:50px;
+height:50px;
+background-color:green;
+top:50px;
+left:0px;
+}
+#div3 {
+position:absolute;
+width:50px;
+height:50px;
+background-color:blue;
+top:0px;
+left:50px;
+}
+#div4 {
+position:absolute;
+width:50px;
+height:50px;
+background-color:gold;
+top:50px;
+left:50px;
+}
+#div_res {
+width:50px;
+height:50px;
+margin-top:50px;
+margin-left:40px;
+border:1px solid black;
+}
+</style>
+</head>
+<body>
+<div id="stt"></div>
+Щелкните на "окрашенный" квадратик, потом на "пустой" квадратик и он "получит" этот цвет.
+<div style="width:100px; height:100px; position:relative; margin-left:15px;">
+<div id="div1" onclick="cvet_vib=$(this).css('background-color'); "></div>
+<div id="div2" onclick="cvet_vib=$(this).css('background-color'); "></div>
+<div id="div3" onclick="cvet_vib=$(this).css('background-color'); "></div>
+<div id="div4" onclick="cvet_vib=$(this).css('background-color'); "></div>
+</div>
+<div id="div_res" onclick="$(this).css('background-color',cvet_vib);"></div>
+
+<script>
+var cvet_vib;
+
+
+
+function cvet_vibor(elem) {
+   cvet_vib=elem.getAttribute('style');
+}
+function cvet_ustan(elem) {
+   elem.setAttribute('style', cvet_vib);
+}
+</script>
+</body>
+</html>

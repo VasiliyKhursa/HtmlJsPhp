@@ -1,0 +1,58 @@
+﻿body {
+font-family:arial;
+font-size:11pt;
+color:black;
+background-color:white;
+font-weight:normal;
+font-style:normal;
+margin:0px;
+}
+
+#container{
+width:1024px;
+background-color:whitesmoke;
+margin:0px auto;
+}
+
+#logo {
+width:1024px;
+height:200px;
+background-color:gold;
+}
+
+#menu {
+width:324px;
+height:50px;
+background-color:blue;
+float:left;
+}
+
+#poisk {
+width:700px;
+height:50px;
+background-color:green;
+float:right;
+}
+
+#kontent {
+width:700px;
+background-color:silver;
+float:left;
+}
+
+#ssilki {
+width:324px;
+background-color:khaki;
+float:right;
+}
+
+#footer {
+width:1024px;
+height:30px;
+background-color:brown;
+}
+
+#clear {
+clear:both;
+}
+

@@ -1,0 +1,194 @@
+﻿body{
+	background: #8CCC85;
+}
+
+
+#container{
+	width: 1024px;
+	background-color: #B6FFEB;
+	margin: 0px auto
+}
+
+#logo{
+	width: 1024px;
+	height: 100px;
+	background-color: #34CC26;
+}
+
+#menu{
+	width: 700px;
+	height: 50px;
+	background-color: #3C60CC;
+	float: left;
+/*    display: table; /*показывает как должен отображаться бблок*/
+    position: relative;
+
+}
+
+#find{
+	width: 324px;
+	height: 200px;
+	background-color: #CC1CC1;
+	float: right;
+    display: table;
+}
+
+#content{
+	width: 700px;
+   height: 500px;
+	background-color: #FFFFFF;
+	float: left;
+    border: 2px;
+    padding: 5px;
+    box-sizing: border-box; /* не учитывает в рассчетах */
+}
+
+#ssilki{
+	width: 324px;
+/*	height: 200px;      */
+	background-color: #994137;
+	float: right;
+    display: table;
+}
+
+#foter{
+	width: 1024px;
+	height: 50px;
+	background-color: #BA5241;
+	float: left;
+    display: table;
+}
+
+.cell{
+/*    display: table-cell;*/
+    vertical-align: middle;
+    position: absolute;
+    top: 10px;      /*относительно блока menu*/
+    left: 10px;     /*относительно блока menu*/
+}
+
+.cell_f{
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.ssilka1{
+    display: table-row;
+}
+
+.ssilka2{
+    display: table-row;
+}
+
+.ssilka3{
+    display: table-row;
+}
+
+.ssilka1_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ssilka2_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ssilka3_1{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.find1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+input, select, textarea {
+   border-radius: 4px;
+   text-align: justify;
+
+}
+
+#submit1, #submit2, #submit3{
+    cursor: pointer;
+}
+
+.border{
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+/*
+div.border{
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+*/
+
+/*для ввсехссылок примнется данный стиль*/
+/*
+div a{
+	font-family:"@Arial Unicode MS";
+	font-size: 24px;
+}
+*/
+
+div span{
+/*дл всех span*/
+	font-family:  @Batang;
+	font-size: 36px;
+}
+
+
+.roll{
+	text-decoration: none
+}
+
+.roll:hover{
+	text-decoration: underline;
+	color: green;
+}
+
+
+.roll:active{
+	text-decoration: underline;
+	color: blue;
+}
+
+.man{
+	display: table;
+	display: table-cell;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	border: 1px;
+}
+
+.man:hover{
+	color: green;
+}
+
+.man:active{
+	color: yellow;
+}
+
+#azaza{
+
+	width: 680px;
+	height: 100px;
+	background-color: #4B76CC;
+    box-sizing: border-box; /* не учитывает в рассчетах */
+	display: block;
+	visibility: hidden;
+}
+
+
